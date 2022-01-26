@@ -16,17 +16,17 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 *
 
 ## Examples 
-##### Print
-**Pop Culture**
+**Print**
+##### Pop Culture
 ```
 sayItWithYourChest ("Hello world");
 ```
-**JavaScript**
+##### JavaScript
 ```
 console.log("Hello world!");
 ```
-##### If/Else If/ Else
-**Pop Culture**
+**If/Else If/ Else**
+##### Pop Culture
 ```
 as if (time < 10) {
   greeting = "Good morning";
@@ -36,7 +36,7 @@ as if (time < 10) {
   greeting = "Good evening";
 }
 ```
-**JavaScript**
+##### JavaScript
 ```
 if (time < 10) {
   greeting = "Good morning";
