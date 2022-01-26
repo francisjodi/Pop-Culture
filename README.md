@@ -20,4 +20,16 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 |  Pop Culture                  | JavaScript                    |
 | ----------------------------  | ----------------------------- |
 | sayItWithYourChest ("Hello world");| console.log("Hello world!"); |
-
+|as if (time < 10) {
+  greeting = "Good morning";
+} ugh, as if (time < 20) {
+  greeting = "Good day";
+} ugh {
+  greeting = "Good evening";
+}|if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}|
