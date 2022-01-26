@@ -21,8 +21,8 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 | ----------------------------  | ----------------------------- |
 | sayItWithYourChest ("Hello world");| console.log("Hello world!"); |
 
-###### If/Else If/ Else
-###### Pop Culture
+##### If/Else If/ Else
+**Pop Culture**
 ```
 as if (time < 10) {
   greeting = "Good morning";
@@ -32,7 +32,7 @@ as if (time < 10) {
   greeting = "Good evening";
 }
 ```
-###### JavaScript
+**JavaScript**
 ```
 if (time < 10) {
   greeting = "Good morning";
