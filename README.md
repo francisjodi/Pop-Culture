@@ -16,5 +16,8 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 *
 
 ## Examples 
-JavaScript: console.log("Hello world!");
-Pop Culture: sayItWithYourChest ("Hello world");
+
+|  Pop Culture                  | JavaScript                    |
+| ----------------------------  | ----------------------------- |
+| sayItWithYourChest ("Hello world");| console.log("Hello world!"); |
+
