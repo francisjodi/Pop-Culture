@@ -16,11 +16,15 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 *
 
 ## Examples 
-
-|  Pop Culture                  | JavaScript                    |
-| ----------------------------  | ----------------------------- |
-| sayItWithYourChest ("Hello world");| console.log("Hello world!"); |
-
+##### Print
+**Pop Culture**
+```
+sayItWithYourChest ("Hello world");
+```
+**JavaScript**
+```
+console.log("Hello world!");
+```
 ##### If/Else If/ Else
 **Pop Culture**
 ```
