@@ -1,5 +1,5 @@
 import assert from "assert"
-import {add, times} from "../src/compiler.js"
+import { add } from "../src/popCulture.js"
 
 describe("The Compiler", () => {
   describe("has an add function()", () => {

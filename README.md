@@ -1,7 +1,6 @@
 # Pop Culture 
-(logo)
 <p align="center">
-<img src= "docs/logo.png" height="400">
+<img src= "docs/logo.png" height="200">
 </p>
 
 ## Introduction 
