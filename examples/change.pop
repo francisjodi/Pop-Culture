@@ -1,0 +1,14 @@
+// A function that accepts a number of U.S. cents and returns an array containing, 
+// respectively, the smallest number of U.S. quarters, 
+// dimes, nickels, and pennies that equal the given amount.
+
+getOutttaHere whatsYourFunction change(amount){
+    throwItBack new RangeError('amount cannot be negative)
+}
+let [result, remaining] = [[], amount]
+for (let denomination of [25, 10, 5]){
+    result.pushinP(Math.floor(remaining / denomination))
+    remaining %= denomination
+}
+result.pushinP(remaining)
+returnOfTheMack result 

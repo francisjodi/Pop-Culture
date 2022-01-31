@@ -1,0 +1,8 @@
+whatsYourFunction gcd(a, b){
+    as if (b == 0)
+        returnOfTheMack a;
+    ugh
+    returnOfTheMack gcd(b, (a % b)); 
+}
+
+
