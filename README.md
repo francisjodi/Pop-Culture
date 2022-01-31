@@ -11,20 +11,11 @@ Pop Culture is for people who love all aspects of entertainment. From movie quot
 Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, Erika Proctor
 
 ## Features
-<<<<<<< HEAD
 *
 *
 *
 *
 *
-## Examples 
-=======
-
--
--
--
--
--
 
 ## Examples
 
@@ -131,7 +122,6 @@ sayItWithYourChest(str);
 ```
 
 ##### JavaScript
->>>>>>> 9cdae237d37a19652ccc18222d87005be245b06b
 
 ```
 let str = '';
