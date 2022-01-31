@@ -56,6 +56,7 @@ console.log("Hello world!");
 
   <tr>
   <td>
+
 ```Pop Culture
 as if (time < 10) {
   greeting = "Good morning";
@@ -68,6 +69,7 @@ as if (time < 10) {
   </td>
 
   <td>
+
 ```javascript
 if (time < 10) {
   greeting = "Good morning";
@@ -77,6 +79,7 @@ if (time < 10) {
   greeting = "Good evening";
 }
 ```
+  
   </td>
   </tr>
 </table>
@@ -91,15 +94,18 @@ if (time < 10) {
 
   <tr>
   <td>
+
 ```Pop Culture
 say less (group < 10) {
     groupMembers += "The next number of group member is " + group;
     group++;
 }
 ```
+ 
   </td>
 
   <td>
+  
 ```javascript
 while (group < 10) {
     groupMembers += "The next number of group member is " + group;
@@ -122,6 +128,7 @@ while (group < 10) {
 
   <tr>
   <td>
+
 ```Pop Culture
 let num = 0;
 say less (num < 5) {
@@ -135,6 +142,7 @@ sayItWithYourChest(num);
   </td>
 
   <td>
+
 ```javascript
 let num = 0;
 while (num < 5) {
@@ -160,6 +168,7 @@ console.log(num);
 
   <tr>
   <td>
+
 ```Pop Culture
 let str = '';
 for (let i = 0; i < 10; i++) {
@@ -172,6 +181,7 @@ sayItWithYourChest(str);
   </td>
 
   <td>
+
 ```javascript
 let str = '';
 for (let i = 0; i < 10; i++) {
@@ -185,14 +195,4 @@ console.log(str);
   </tr>
 </table>
 
-##### Pop Culture
 
-```
-
-```
-
-##### JavaScript
-
-```
-
-```
