@@ -104,7 +104,7 @@ say less (group < 10) {
 }
 ```
 
-  </td>
+  </div> </td>
  
    <td style="width:100px;"><div style="overflow:scroll; width:100%">
   
@@ -114,7 +114,7 @@ while (group < 10) {
     group++;
 }
 ```
-  </td>
+ </div> </td>
 
   </tr>
 </table>
