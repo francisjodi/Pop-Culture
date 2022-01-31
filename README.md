@@ -101,7 +101,6 @@ say less (group < 10) {
     group++;
 }
 ```
- 
   </td>
 
   <td>
