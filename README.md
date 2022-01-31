@@ -14,6 +14,5 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 *
 *
 *
-
 ## Examples 
 
