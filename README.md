@@ -30,31 +30,29 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 
   <tr>
   <td>
-
 ```Pop Culture
 sayItWithYourChest ("Hello world");
 ```
-
   </td>
 
   <td>
-
 ```javascript
 console.log("Hello world!");
 ```
-
   </td>
-
   </tr>
 </table>
 
-
-
 **If/Else If/ Else**
+<table>
+  <tr>
+  <th>Pop Culture</th>
+  <th>JavaScript</th>
+  </tr>
 
-##### Pop Culture
-
-```
+  <tr>
+  <td>
+```Pop Culture
 as if (time < 10) {
   greeting = "Good morning";
 } ugh, as if (time < 20) {
@@ -63,10 +61,10 @@ as if (time < 10) {
   greeting = "Good evening";
 }
 ```
+  </td>
 
-##### JavaScript
-
-```
+  <td>
+```javascript
 if (time < 10) {
   greeting = "Good morning";
 } else if (time < 20) {
@@ -75,32 +73,52 @@ if (time < 10) {
   greeting = "Good evening";
 }
 ```
+  </td>
+  </tr>
+</table>
 
 **While**
 
-##### Pop Culture
+<table>
+  <tr>
+  <th>Pop Culture</th>
+  <th>JavaScript</th>
+  </tr>
 
-```
+  <tr>
+  <td>
+```Pop Culture
 say less (group < 10) {
     groupMembers += "The next number of group member is " + group;
     group++;
 }
 ```
+  </td>
 
-##### JavaScript
-
-```
+  <td>
+```javascript
 while (group < 10) {
     groupMembers += "The next number of group member is " + group;
     group++;
 }
 ```
+  </td>
+  </tr>
+</table>
+
 
 **Break Statement**
 
-##### Pop Culture
 
-```
+<table>
+  <tr>
+  <th>Pop Culture</th>
+  <th>JavaScript</th>
+  </tr>
+
+  <tr>
+  <td>
+```Pop Culture
 let num = 0;
 say less (num < 5) {
   as if (num === 3) {
@@ -110,10 +128,10 @@ say less (num < 5) {
 }
 sayItWithYourChest(num);
 ```
+  </td>
 
-##### JavaScript
-
-```
+  <td>
+```javascript
 let num = 0;
 while (num < 5) {
   if (num === 3) {
@@ -123,12 +141,22 @@ while (num < 5) {
 }
 console.log(num);
 ```
+  </td>
+  </tr>
+</table>
+
 
 **Continue Statement**
 
-##### Pop Culture
+<table>
+  <tr>
+  <th>Pop Culture</th>
+  <th>JavaScript</th>
+  </tr>
 
-```
+  <tr>
+  <td>
+```Pop Culture
 let str = '';
 for (let i = 0; i < 10; i++) {
   as if (i === 3)
@@ -137,10 +165,10 @@ for (let i = 0; i < 10; i++) {
 }
 sayItWithYourChest(str);
 ```
+  </td>
 
-##### JavaScript
-
-```
+  <td>
+```javascript
 let str = '';
 for (let i = 0; i < 10; i++) {
   if (i === 3)
@@ -149,3 +177,7 @@ for (let i = 0; i < 10; i++) {
 }
 console.log(str);
 ```
+  </td>
+  </tr>
+</table>
+
