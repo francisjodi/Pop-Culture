@@ -34,20 +34,21 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 ```Pop Culture
 sayItWithYourChest ("Hello world");
 ```
-  
+
   </td>
 
   <td>
 
-``` JavaScript
+```JavaScript
 console.log("Hello world!");
 ```
-  
+
   </td>
   </tr>
 </table>
 
 **If/Else If/ Else**
+
 <table>
   <tr>
   <th>Pop Culture</th>
@@ -66,20 +67,21 @@ as if (time < 10) {
   greeting = "Good evening";
 }
 ```
+
   </td>
 
   <td>
 
 ```javascript
-if (time < 10) {
-  greeting = "Good morning";
-} else if (time < 20) {
-  greeting = "Good day";
-} else {
-  greeting = "Good evening";
+if (time < 10) {
+  greeting = "Good morning"
+} else if (time < 20) {
+  greeting = "Good day"
+} else {
+  greeting = "Good evening"
 }
 ```
-  
+
   </td>
   </tr>
 </table>
@@ -93,7 +95,7 @@ if (time < 10) {
   </tr>
 
   <tr>
-  <td style="overflow:scroll ; width:50px">
+  <td style="width:100px;"><div style="overflow:scroll; width:100%">
 
 ```Pop Culture
 say less (group < 10) {
@@ -101,9 +103,10 @@ say less (group < 10) {
     group++;
 }
 ```
+
   </td>
  
-  <td style="overflow:scroll; width:50px">
+   <td style="width:100px;"><div style="overflow:scroll; width:100%">
   
 ```javascript
 while (group < 10) {
@@ -116,9 +119,7 @@ while (group < 10) {
   </tr>
 </table>
 
-
 **Break Statement**
-
 
 <table>
   <tr>
@@ -139,24 +140,25 @@ say less (num < 5) {
 }
 sayItWithYourChest(num);
 ```
+
   </td>
 
   <td>
 
 ```javascript
-let num = 0;
+let num = 0
 while (num < 5) {
   if (num === 3) {
-    break;
+    break
   }
-  num += 1;
+  num += 1
 }
-console.log(num);
+console.log(num)
 ```
+
   </td>
   </tr>
 </table>
-
 
 **Continue Statement**
 
@@ -178,21 +180,20 @@ for (let i = 0; i < 10; i++) {
 }
 sayItWithYourChest(str);
 ```
+
   </td>
 
   <td>
 
 ```javascript
-let str = '';
+let str = ""
 for (let i = 0; i < 10; i++) {
-  if (i === 3)
-    continue;
-  str += i;
+  if (i === 3) continue
+  str += i
 }
-console.log(str);
+console.log(str)
 ```
+
   </td>
   </tr>
 </table>
-
-
