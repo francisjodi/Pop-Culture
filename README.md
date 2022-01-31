@@ -30,13 +30,13 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 
   <tr>
   <td>
-```Pop Culture
+```
 sayItWithYourChest ("Hello world");
 ```
   </td>
 
   <td>
-```javascript
+```
 console.log("Hello world!");
 ```
   </td>
@@ -181,3 +181,14 @@ console.log(str);
   </tr>
 </table>
 
+##### Pop Culture
+
+```
+
+```
+
+##### JavaScript
+
+```
+
+```
