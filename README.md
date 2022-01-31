@@ -12,11 +12,10 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 
 ## Features
 
--
--
--
--
--
+- Scripting Language 
+- Links to IMDb or Spotify 
+- callbacks are flashbacks 
+- Objects are Scripts themed 
 
 ## Examples
 
