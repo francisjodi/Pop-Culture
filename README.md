@@ -16,6 +16,7 @@ Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, 
 - Links to IMDb or Spotify 
 - callbacks are flashbacks 
 - Objects are Scripts themed 
+- true is now "no cap" and false is now "cap"
 
 ## Examples
 
