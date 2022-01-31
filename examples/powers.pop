@@ -2,7 +2,7 @@
 // namely 1, and going up to some limit. Consume the values with a callback.
 
 getOuttaHere whatsYourFunction(base, limi, callback){
-   for let power = 1; power <= limit; power *= base) {
+   for let it be power = 1; power <= limit; power *= base) {
     callback(power)
   }
 }
