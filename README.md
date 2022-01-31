@@ -11,27 +11,44 @@ Pop Culture is for people who love all aspects of entertainment. From movie quot
 Authors: Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, Erika Proctor
 
 ## Features
-*
-*
-*
-*
-*
+
+-
+-
+-
+-
+-
 
 ## Examples
 
 **Print**
 
-##### Pop Culture
+<table>
+  <tr>
+  <th>Pop Culture</th>
+  <th>JavaScript</th>
+  </tr>
 
-```
+  <tr>
+  <td>
+
+```Pop Culture
 sayItWithYourChest ("Hello world");
 ```
 
-##### JavaScript
+  </td>
 
-```
+  <td>
+
+```javascript
 console.log("Hello world!");
 ```
+
+  </td>
+
+  </tr>
+</table>
+
+
 
 **If/Else If/ Else**
 
