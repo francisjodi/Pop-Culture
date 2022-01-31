@@ -93,7 +93,7 @@ if (time < 10) {
   </tr>
 
   <tr>
-  <td>
+  <td style="overflow:scroll>
 
 ```Pop Culture
 say less (group < 10) {
@@ -102,8 +102,8 @@ say less (group < 10) {
 }
 ```
   </td>
-
-  <td>
+ 
+  <td style="overflow:scroll>
   
 ```javascript
 while (group < 10) {
@@ -112,7 +112,7 @@ while (group < 10) {
 }
 ```
   </td>
-  
+
   </tr>
 </table>
 
