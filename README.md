@@ -13,7 +13,6 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 
 ## Features
 
-- Scripting Language 
 - Links to IMDb or Spotify 
 - callbacks are flashbacks 
 - Objects are Scripts themed 
