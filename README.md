@@ -28,19 +28,29 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 
 ## Types
 
-| Pop Culture              | JavaScripy    |
-| ------------------------ | ------------- |
-| makeUpYourMind           | Boolean       |
-| sayIt                    | String        |
-| whatsYourNumber          | Numbers       |
-| whatYourFunction         | Fucntion      |
-| Let me check my calendar | Array/List    |
-| I'm the map              | Map           |
-| look it Up               | Dictionary    |
-| my name is               | Class/ Object |
+| Pop Culture              | JavaScript                     |
+| ------------------------ | ------------------------------ |
+| makeUpYourMind           | Boolean                        |
+| sayIt                    | String                         |
+| whatsYourNumber          | Numbers (ints parmaterzied )   |
+| didYouGetTheDigits       | Numbers (ints unlimited length |
+| whatYourFunction         | Fucntion                       |
+| Let me check my calendar | Array/List                     |
+| I'm the map              | Map                            |
+| look it Up               | Dictionary                     |
+| my name is               | Class/ Object                  |
 
-## Variable 
+## Variable Declration and Assignment
 
+| Pop Culture                                                             | JavaScripy                                       |
+| ----------------------------------------------------------------------- | ------------------------------------------------ |
+| whatsYourNumber a = 2                                                   | let a = 2                                        |
+| didYougetTheDigits b = 3.9                                              | let b = 3.9                                      |
+| sayIt c = "Soy Dora"                                                    | let c = "Soy Dora"                               |
+| makeUpYourMind d = true                                                 | let d = true                                     |
+| makeUpYourMind e = false                                                | let e = false                                    |
+| Let me check my calendar = girlBoss = ["Monday", "Wednesday", "Friday"] | let girlBoss = ["Monday", "Wednesday", "Friday"] |
+| Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} |
 
 ## Examples
 
