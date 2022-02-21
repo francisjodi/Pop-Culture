@@ -77,8 +77,7 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 
 **Single-Line Comment**
 ```Pop Culture
-
-Jenna, my balls - Excuse my French - are in an iron vice. Corporates are twisting and squeezing like a bunch of dominatrixes on steroids, and now Lucy is presenting her own re-design without you. Could you tell me what is going on?  shh
+I like your dress.  shh
 ```
 
 **Multiline Comment**
