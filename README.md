@@ -52,6 +52,42 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | Let me check my calendar = girlBoss = ["Monday", "Wednesday", "Friday"] | let girlBoss = ["Monday", "Wednesday", "Friday"] |
 | Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} |
 
+##
+
+## Operators and Comparators
+
+| Pop Culture | JavaScript |
+| ----------- | ---------- |
+| =           | =          |
+| ==          | ==         |
+| +           | +          |
+| -           | -          |
+| `* `        | `*`        |
+| `**`        | `*`        |
+| /           | /          |
+| %           | %          |
+| &&          | &&         |
+| !=          | !=         |
+| >           | >          |
+| <           | <          |
+| <=          | <=         |
+| >=          | >=         |
+
+## Comments 
+
+**Single-Line Comment**
+```Pop Culture
+
+Jenna, my balls - Excuse my French - are in an iron vice. Corporates are twisting and squeezing like a bunch of dominatrixes on steroids, and now Lucy is presenting her own re-design without you. Could you tell me what is going on?  shh
+```
+
+**Multiline Comment**
+```
+"" 
+Jenna Rink: I love you, Matt. You're my best friend.
+Matt Flamhaff: I love you too, Jenna... I've always loved you.
+""
+```
 ## Examples
 
 **Print**
