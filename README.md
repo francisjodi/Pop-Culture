@@ -8,15 +8,39 @@
 
 Pop Culture is for people who love all aspects of entertainment. From movie quotes to Tik Toks, this language has something for everyone who loves the world of pop culture. Pop culture is a programming language meant to be enjoyable and even have you reminisce about some of your favorite moments in pop culture history. In this language, you will see some of our favorite quotes from pop culture moments in films, television and more used for our syntax.
 
-Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis](https://github.com/nelson6400), 
+Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis](https://github.com/nelson6400),
 [Jodi-Ann Francis](https://github.com/francisjodi), [Sumaiyah Lee](https://github.com/sumaiyahlee), [Erika Proctor](https://github.com/elproctor7)
 
 ## Features
 
-- Links to IMDb or Spotify 
-- callbacks are flashbacks 
-- Objects are Scripts themed 
-- true is now "no cap" and false is now "cap"
+- Static Typing
+- Object Oriented
+- Links to IMDb or Spotify
+- Conditional Satements
+- Loop Declaration
+- Fuction Declaration
+- Built-In DataStrcutures
+- Single and MuliLine comments
+- Jump Statements
+- Variable Declration
+  <!-- - Abstract data Type  -->
+  <!-- - Functions??? -->
+
+## Types
+
+| Pop Culture              | JavaScripy    |
+| ------------------------ | ------------- |
+| makeUpYourMind           | Boolean       |
+| sayIt                    | String        |
+| whatsYourNumber          | Numbers       |
+| whatYourFunction         | Fucntion      |
+| Let me check my calendar | Array/List    |
+| I'm the map              | Map           |
+| look it Up               | Dictionary    |
+| my name is               | Class/ Object |
+
+## Variable 
+
 
 ## Examples
 
