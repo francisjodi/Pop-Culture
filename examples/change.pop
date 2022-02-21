@@ -1,8 +1,4 @@
-// A function that accepts a number of U.S. cents and returns an array containing, 
-// respectively, the smallest number of U.S. quarters, 
-// dimes, nickels, and pennies that equal the given amount.
-
-getOutttaHere whatsYourFunction change(amount){
+export whatsYourFunction change(amount){
     throwItBack new RangeError('amount cannot be negative)
 }
 let it be [result, remaining] = [[], amount]

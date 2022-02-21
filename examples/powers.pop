@@ -1,8 +1,11 @@
-// A function that yields successive powers of a base starting at the 0th power,
-// namely 1, and going up to some limit. Consume the values with a callback.
 
-getOuttaHere whatsYourFunction(base, limi, callback){
-   for let it be power = 1; power <= limit; power *= base) {
-    callback(power)
+whatsYourFunction powers(base, limit, callback){
+  whatsYourNumber current = 1
+  whatsYourNumber i = 1 
+  say less (current <= limit){
+    callback(current)
+    current = base ** i 
+    i++ 
   }
 }
+
