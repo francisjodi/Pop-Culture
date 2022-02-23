@@ -1,5 +1,5 @@
 popCulture {
-pogram       = Statement*
+program       = Statement*
 Statement    = let id "=" Exp ";"                        -- vardec
               | id "=" Exp ";"                           -- assign
               | for Exp ";"                              -- print
