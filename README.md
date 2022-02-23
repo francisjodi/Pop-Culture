@@ -17,7 +17,7 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 - Object Oriented
 - Links to IMDb or Spotify
 - Conditional Satements
-- Loop Declaration
+- While loop 
 - Fuction Declaration
 - Built-In DataStrcutures
 - Single and MuliLine comments
@@ -42,17 +42,15 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 
 ## Variable Declration and Assignment
 
-| Pop Culture                                                             | JavaScripy                                       |
+| Pop Culture                                                             | JavaScript                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------ |
 | whatsYourNumber a = 2                                                   | let a = 2                                        |
-| didYougetTheDigits b = 3.9                                              | let b = 3.9                                      |
+| didYouGetTheDigits b = 3.9                                              | let b = 3.9                                      |
 | sayIt c = "Soy Dora"                                                    | let c = "Soy Dora"                               |
 | makeUpYourMind d = true                                                 | let d = true                                     |
 | makeUpYourMind e = false                                                | let e = false                                    |
 | Let me check my calendar = girlBoss = ["Monday", "Wednesday", "Friday"] | let girlBoss = ["Monday", "Wednesday", "Friday"] |
 | Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} |
-
-##
 
 ## Operators and Comparators
 
@@ -73,20 +71,24 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | <=          | <=         |
 | >=          | >=         |
 
-## Comments 
+## Comments
 
 **Single-Line Comment**
+
 ```Pop Culture
-I like your dress.  shh
+shh   this is a single line comment 
 ```
 
 **Multiline Comment**
+
 ```
-"" 
+''
+This is a multiline comment 
 Jenna Rink: I love you, Matt. You're my best friend.
 Matt Flamhaff: I love you too, Jenna... I've always loved you.
-""
+''
 ```
+
 ## Examples
 
 **Print**
@@ -101,7 +103,7 @@ Matt Flamhaff: I love you too, Jenna... I've always loved you.
   <td>
 
 ```Pop Culture
-sayItWithYourChest ("Hello world");
+  ("Hello world");
 ```
 
   </td>

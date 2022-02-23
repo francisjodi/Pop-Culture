@@ -1,0 +1,44 @@
+popCulture {
+pogram       = Statement*
+Statement    = let id "=" Exp ";"                        -- vardec
+              | id "=" Exp ";"                           -- assign
+              | for Exp ";"                              -- print
+              | while Exp Block                          -- while
+Block = "{"Statement+"}"
+Exp         =  Exp ("+" | "-") Exp1                      -- binary
+              |  Exp ("*") Exp1                          -- binary 
+              |  Exp1
+Exp1        =  Exp2 "&&" Exp2                             -- binary
+              |  Exp2
+Exp2        =  Exp2 ("<="|"<"|"=="|"!="|">="|">") Exp3    -- binary
+              |  Exp3
+Exp3        =  Exp3   Exp4                                -- binary
+              |  Exp4
+Exp4        =  Exp4 ("/" | "%") Exp5                      -- binary
+              |  Exp5
+Exp5        =  Exp6 "^" Exp6                              -- binary
+              |  Exp6
+Exp6        =  Exp7 "**" Exp7                             -- binary
+              |  Exp7
+Exp7        = num
+              | Call
+              | id
+              | "(" Exp ")"                              -- parens              
+Call         = id "(" Args ")"
+Params       =  ListOf<id, ",">
+Arg          =  id ":" Exp
+Args         =  ListOf<Arg, ",">
+print        = "sayItWithYourChest " ~alnum
+break        = "give me a break "  ~alnum
+continue     =  "thank u nex"   ~alnum
+while        = "say less " ~alnum
+if           = "]as if" ~alnum
+else if      = " ugh, as if " ~alnum
+else         = " ugh " ~alnum
+function     = "whatsYourFuncion" ~alnum
+push         = "pushinP" ~alnum
+keyword      = let | for
+id           =  ~keyword (letter | "_") (letter | digit | "_")*
+space        =  "shh"  --singleLineComment 
+               | " '''' "  --multilineComment
+}
