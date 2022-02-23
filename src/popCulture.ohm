@@ -1,12 +1,15 @@
 popCulture {
-program       = Statement*
-Statement    = let id "=" Exp ";"                        -- vardec
-              | id "=" Exp ";"                           -- assign
-              | for Exp ";"                              -- print
-              | while Exp Block                          -- while
-Block = "{"Statement+"}"
-Exp         =  Exp ("+" | "-") Exp1                      -- binary
-              |  Exp ("*") Exp1                          -- binary 
+Program     = Statement*
+Statement   = let id "=" Exp ";"                          -- vardec
+              | function id "(" Params ")" "=" Exp ";"    -- fundec
+              | id "=" Exp ";"                            -- assign
+              | print Exp ";"                             -- print
+              | while Exp Block                           -- while
+
+Block       = "{" Statement+ "}"
+
+Exp         =  Exp ("+" | "-") Exp1                       -- binary
+              |  Exp ("*") Exp1                           -- binary 
               |  Exp1
 Exp1        =  Exp2 "&&" Exp2                             -- binary
               |  Exp2
@@ -23,22 +26,29 @@ Exp6        =  Exp7 "**" Exp7                             -- binary
 Exp7        = num
               | Call
               | id
-              | "(" Exp ")"                              -- parens              
-Call         = id "(" Args ")"
+              | "(" Exp ")"                               -- parens  
+
+Call         = id "(" Args ")"                           
 Params       =  ListOf<id, ",">
 Arg          =  id ":" Exp
 Args         =  ListOf<Arg, ",">
+
+let          = "lit" ~alnum
 print        = "sayItWithYourChest " ~alnum
 break        = "give me a break "  ~alnum
-continue     =  "thank u nex"   ~alnum
+continue     = "thank u next"   ~alnum
 while        = "say less " ~alnum
-if           = "]as if" ~alnum
-else if      = " ugh, as if " ~alnum
-else         = " ugh " ~alnum
+if           = "as if" ~alnum
+else if      = "ugh, as i " ~alnum
+else         = "ugh" ~alnum
 function     = "whatsYourFuncion" ~alnum
 push         = "pushinP" ~alnum
-keyword      = let | for
+singleLnCmt  = "shh" ~alnum
+keyword      = let | print | break | continue | while | if | 
+                else if | else | function | push | singleLnCmt
+
 id           =  ~keyword (letter | "_") (letter | digit | "_")*
-space        =  "shh"  --singleLineComment 
-               | " '''' "  --multilineComment
+space       +=  " " | "\t" | comment
+comment      =  singleLnCmt (~"\n" any)*                   -- singleLineComment
+               | " '''' "                                  -- multilineComment
 }
