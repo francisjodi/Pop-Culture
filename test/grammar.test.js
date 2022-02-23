@@ -7,7 +7,7 @@ const syntaxChecks = [
 
 ]
 
-const syntaxError = [
+const syntaxErrors = [
 
 ]
 
