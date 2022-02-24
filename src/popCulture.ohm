@@ -1,54 +1,88 @@
 popCulture {
-Program     = Statement*
-Statement   = let id "=" Exp ";"                          -- vardec
-              | function id "(" Params ")" "=" Exp ";"    -- fundec
-              | id "=" Exp ";"                            -- assign
-              | print Exp ";"                             -- print
-              | while Exp Block                           -- while
 
-Block       = "{" Statement+ "}"
+    Program     = Statement*
+    Statement   = (let | const) id "=" Exp ";"                  -- vardec
+                | function id "(" Params ")" "=" Block ";"      -- fundec
+                | id "=" Exp ";"                                -- assign
+                | print Exp ";"                                 -- print
+                | LoopStmt                 
+                | IfStmt                      
+                | return ";"                                    -- shortreturn
+                | return Exp ";"                                -- return
+                | break ";"                                     -- break
+                                                
 
-Exp         =  Exp ("+" | "-") Exp1                       -- binary
-              |  Exp ("*") Exp1                           -- binary 
-              |  Exp1
-Exp1        =  Exp2 "&&" Exp2                             -- binary
-              |  Exp2
-Exp2        =  Exp2 ("<="|"<"|"=="|"!="|">="|">") Exp3    -- binary
-              |  Exp3
-Exp3        =  Exp3   Exp4                                -- binary
-              |  Exp4
-Exp4        =  Exp4 ("/" | "%") Exp5                      -- binary
-              |  Exp5
-Exp5        =  Exp6 "^" Exp6                              -- binary
-              |  Exp6
-Exp6        =  Exp7 "**" Exp7                             -- binary
-              |  Exp7
-Exp7        = num
-              | Call
-              | id
-              | "(" Exp ")"                               -- parens  
+    Block       = "{" Statement* "}"
 
-Call         = id "(" Args ")"                           
-Params       =  ListOf<id, ",">
-Arg          =  id ":" Exp
-Args         =  ListOf<Arg, ",">
+    IfStmt      = if Exp Block else (Block | IfStmt)            -- long
+                | if Exp Block                                  -- short
+                
+    LoopStmt    = while Exp Block                               -- while
+                | for id in Exp Block                           -- for
 
-let          = "lit" ~alnum
-print        = "sayItWithYourChest " ~alnum
-break        = "give me a break "  ~alnum
-continue     = "thank u next"   ~alnum
-while        = "say less " ~alnum
-if           = "as if" ~alnum
-else if      = "ugh, as i " ~alnum
-else         = "ugh" ~alnum
-function     = "whatsYourFuncion" ~alnum
-push         = "pushinP" ~alnum
-singleLnCmt  = "shh" ~alnum
-keyword      = let | print | break | continue | while | if | 
-                else if | else | function | push | singleLnCmt
+    Exp         = Exp1 "?" Exp1 ":" Exp                         -- conditional
+                | Exp1
+    Exp1        = Exp1 "??" Exp2                                -- unwrapelse
+                | Exp2
+    Exp2        = Exp3 ("||" Exp3)+                             -- or
+                | Exp3 ("&&" Exp3)+                             -- and
+                | Exp3
+    Exp3        = Exp4 ("|" Exp4)+                              -- bitor
+                | Exp4 ("^" Exp4)+                              -- bitxor
+                | Exp4 ("&" Exp4)+                              -- bitand
+                | Exp4
+    Exp4        = Exp5 ("<="|"<"|"=="|"!="|">="|">") Exp5       -- compare
+                | Exp5
+    Exp5        = Exp5 ("<<" | ">>") Exp6                       -- shift
+                | Exp6
+    Exp6        = Exp6 ("+" | "-") Exp7                         -- add
+                | Exp7
+    Exp7        = Exp7 ("*"| "/" | "%") Exp8                    -- multiply
+                | Exp8
+    Exp8        = Exp9 "**" Exp8                                -- power
+                | Exp9
+                | ("#" | "-" | "!" ) Exp9                       -- unary
+    Exp9        = Exp9 ("[" | "?[") Exp "]"                     -- subscript
+                | Exp9 ("." | "?.") id                          -- member
+                | Exp9 ("(" | "?(") Args ")"                    -- call
+                | num
+                | id                                            -- id
+                | String                                        -- string
+                | "[]"                                          -- emptyarray
+                | "[" NonemptyListOf<Exp, ","> "]"              -- arrayexp
+                | "(" Exp ")"                                   -- parens   
 
-id           =  ~keyword (letter | "_") (letter | digit | "_")*
-space       +=  " " | "\t" | comment
-comment      =  singleLnCmt (~"\n" any)*                   -- singleLineComment
-               | " '''' "                                  -- multilineComment
+
+    Call         = id "(" Args ")"                           
+    Params       =  ListOf<id, ",">
+    Arg          =  id ":" Exp
+    Args         =  ListOf<Arg, ",">
+    String       = "\"" letter* "\""
+
+    let          = "lit" ~alnum
+    const        = "stickIt" ~alnum
+    print        = "sayItWithYourChest " ~alnum
+    break        = "period"  ~alnum
+    continue     = "thankUNext"   ~alnum
+    while        = "sayLess " ~alnum
+    for          = "keepItUp" ~alnum
+    in           = "innit" ~alnum
+    if           = "as if" ~alnum
+    elseif       = "ugh, as i " ~alnum
+    else         = "ugh" ~alnum
+    function     = "whatsYourFunction" ~alnum
+    push         = "pushinP" ~alnum
+    singleLnCmt  = "shh" ~alnum
+    return       = "gimmeDat" ~alnum
+    keyword      = let | const | print | break | continue | while |
+                    for | in | if | elseif | else | function | push 
+                    | singleLnCmt |return
+
+    num          = digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?
+    id           =  ~keyword (letter | "_") (letter | digit | "_")*
+    space       +=  " " | "\t" | comment
+    comment      =  singleLnCmt (~"\n" any)*                     -- singleLineComment
+                | " '''' "                                       -- multilineComment
+
 }
+
