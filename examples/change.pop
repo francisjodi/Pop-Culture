@@ -1,10 +1,11 @@
-export whatsYourFunction change(amount){
-    throwItBack new RangeError('amount cannot be negative;
+shh this does not yet reflect our updated grammar
+whatsYourFunction change(amount) {
+    gimmeDat("Amount cannot be negative");
 }
-let it be [result, remaining] = [[], amount];
+lit [result, remaining] = [[], amount];
 for (let it be denomination of [25, 10, 5]){
     result.pushinP(Math.floor(remaining / denomination));
     remaining %= denomination;
 }
 result.pushinP(remaining);
-returnOfTheMack result; 
+gimmeDat(result); 

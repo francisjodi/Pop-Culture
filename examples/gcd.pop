@@ -1,9 +1,10 @@
+shh this does not yet reflect our updated grammar
 whatsYourFunction gcd(a, b){
     as if (b == 0) {
-        returnOfTheMack a;
+        gimmeDat(a);
     }
     ugh {
-        returnOfTheMack gcd(b, (a % b)); 
+        gimmeDat(gcd(b, (a % b))); 
     }
 }
 

@@ -1,3 +1,0 @@
-whatsYourFunction getMoney(counter) {
-	gimmeDat(counter + 1000);
-};
