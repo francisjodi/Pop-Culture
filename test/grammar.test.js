@@ -1,7 +1,7 @@
 import assert from "assert/strict"
 import fs from "fs"
 import ohm from "ohm-js"
-
+import ast from "../src/ast.js"
 
 const syntaxChecks = [
     ["all numeric literal forms", "(\"2 * 3.923\");"],

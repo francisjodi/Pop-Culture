@@ -1,10 +1,10 @@
 export whatsYourFunction change(amount){
-    throwItBack new RangeError('amount cannot be negative)
+    throwItBack new RangeError('amount cannot be negative;
 }
-let it be [result, remaining] = [[], amount]
+let it be [result, remaining] = [[], amount];
 for (let it be denomination of [25, 10, 5]){
-    result.pushinP(Math.floor(remaining / denomination))
-    remaining %= denomination
+    result.pushinP(Math.floor(remaining / denomination));
+    remaining %= denomination;
 }
-result.pushinP(remaining)
-returnOfTheMack result 
+result.pushinP(remaining);
+returnOfTheMack result; 

@@ -1,19 +1,20 @@
 popCulture {
 
-    Program     = Statement*
+    Program     = Statement+
     Statement   = (let | const) id "=" Exp ";"                  -- vardec
-                | function id "(" Params ")" "=" Block ";"      -- fundec
+                | FuncDec                                       -- fundec
                 | id "=" Exp ";"                                -- assign
                 | print Exp ";"                                 -- print
+                | Exp9_call ";"                                 -- call
                 | LoopStmt                 
                 | IfStmt                      
-                | return ";"                                    -- shortreturn
                 | return Exp ";"                                -- return
+                | return ";"                                    -- shortreturn
                 | break ";"                                     -- break
                                                 
 
     Block       = "{" Statement* "}"
-
+    FuncDec     = function id "(" Params ")" Block ";"
     IfStmt      = if Exp Block else (Block | IfStmt)            -- long
                 | if Exp Block                                  -- short
                 
@@ -43,12 +44,11 @@ popCulture {
                 | Exp9
                 | ("#" | "-" | "!" ) Exp9                       -- unary
     Exp9        = Exp9 ("[" | "?[") Exp "]"                     -- subscript
-                | Exp9 ("." | "?.") id                          -- member
                 | Exp9 ("(" | "?(") Args ")"                    -- call
                 | num
                 | id                                            -- id
                 | String                                        -- string
-                | "[]"                                          -- emptyarray
+                | "[" "]"                                       -- emptyarray
                 | "[" NonemptyListOf<Exp, ","> "]"              -- arrayexp
                 | "(" Exp ")"                                   -- parens   
 
@@ -61,24 +61,24 @@ popCulture {
 
     let          = "lit" ~alnum
     const        = "stickIt" ~alnum
-    print        = "sayItWithYourChest " ~alnum
+    print        = "sayItWithYourChest" ~alnum
     break        = "period"  ~alnum
     continue     = "thankUNext"   ~alnum
-    while        = "sayLess " ~alnum
+    while        = "sayLess" ~alnum
     for          = "keepItUp" ~alnum
     in           = "innit" ~alnum
     if           = "as if" ~alnum
-    elseif       = "ugh, as i " ~alnum
+    elseif       = "ugh, as if" ~alnum
     else         = "ugh" ~alnum
     function     = "whatsYourFunction" ~alnum
     push         = "pushinP" ~alnum
     singleLnCmt  = "shh" ~alnum
     return       = "gimmeDat" ~alnum
-    keyword      = let | const | print | break | continue | while |
+    keyword      = let | const | print | return | break | continue | while |
                     for | in | if | elseif | else | function | push 
-                    | singleLnCmt |return
+                    | singleLnCmt 
 
-    num          = digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?
+    num          = digit+ 
     id           =  ~keyword (letter | "_") (letter | digit | "_")*
     space       +=  " " | "\t" | comment
     comment      =  singleLnCmt (~"\n" any)*                     -- singleLineComment
