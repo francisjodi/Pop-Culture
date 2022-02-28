@@ -38,6 +38,16 @@ const expected3 = `   1 | Program statements=[#2,#4]
    4 | ForStatement iterator='i' collection=(Id, "fruitList") body=[#5]
    5 | ReturnStatement expression=[#6]
    6 | SubscriptExpression array=(Id, "fruitList") index=(Id, "i")`
+
+const source4 = `lit newArray = [];`
+const expected4 = `   1 | Program statements=[#2]
+   2 | VariableDeclaration modifier='lit' variable=(Id, "newArray") initializer=#3
+   3 | EmptyArray`
+
+const source5 = `gimmeDat(6 * 7);`
+const expected5 = `   1 | Program statements=[#2]
+   2 | ReturnStatement expression=[#3]
+   3 | BinaryExpression left=(Int, "6") op='*' right=(Int, "7")`
    
 describe("The AST generator", () => {
   it("Test 1: produces the expected AST for all node types", () => {
@@ -48,5 +58,11 @@ describe("The AST generator", () => {
   })
   it("Test 3: produces the expected AST for all node types", () => {
     assert.deepEqual(util.format(ast(source3)), expected3)
+  })
+  it("Test 4: produces the expected AST for all node types", () => {
+    assert.deepEqual(util.format(ast(source4)), expected4)
+  })
+  it("Test 5: produces the expected AST for all node types", () => {
+    assert.deepEqual(util.format(ast(source5)), expected5)
   })
 })

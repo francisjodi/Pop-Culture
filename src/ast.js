@@ -94,7 +94,7 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
     return new core.UnaryExpression(op.sourceString, operand.ast())
   },
   Exp9_emptyarray( _left, _right) {
-    return new core.EmptyArray(type.ast())
+    return new core.EmptyArray()
   },
   Exp9_arrayexp(_left, args, _right) {
     return new core.ArrayExpression(args.asIteration().ast())

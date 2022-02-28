@@ -93,11 +93,7 @@ export class ForStatement {
   }
 }
 
-export class EmptyArray {
-  constructor(baseType) {
-    this.baseType = baseType
-  }
-}
+export class EmptyArray {}
 
 export class ArrayExpression {
   constructor(elements) {
