@@ -1,4 +1,3 @@
-
 whatsYourFunction powers(base, limit, callback){
   whatsYourNumber current = 1
   whatsYourNumber i = 1 
