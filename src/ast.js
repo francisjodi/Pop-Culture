@@ -45,6 +45,9 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   LoopStmt_for(_for, id, _in, collection, body) {
     return new core.ForStatement(id.sourceString, collection.ast(), body.ast())
   },
+  Block(_open, body, _close) {
+    return body.ast()
+  },
   Exp1_unwrapelse(unwrap, op, alternate) {
     return new core.BinaryExpression(
       op.sourceString,
