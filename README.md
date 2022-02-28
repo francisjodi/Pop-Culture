@@ -130,6 +130,8 @@ console.log("Hello world!");
   <td>
 
 ```Pop Culture
+let time;
+let greeting = '';
 as if (time < 10) {
   greeting = "Good morning";
 } ugh, as if (time < 20) {
@@ -144,6 +146,8 @@ as if (time < 10) {
   <td>
 
 ```javascript
+let time
+let greeting = ""
 if (time < 10) {
   greeting = "Good morning"
 } else if (time < 20) {
@@ -169,7 +173,9 @@ if (time < 10) {
   <td style="width:100px;"><div style="overflow:scroll; width:100%">
 
 ```Pop Culture
-say less (group < 10) {
+let group;
+let groupMembers = '';
+say less (group <= 10) {
     groupMembers += "The next number of group member is " + group;
     group++;
 }
@@ -180,7 +186,9 @@ say less (group < 10) {
    <td style="width:100px;"><div style="overflow:scroll; width:100%">
   
 ```javascript
-while (group < 10) {
+let group;
+let groupMembers = ""
+while (group <= 5) {
     groupMembers += "The next number of group member is " + group;
     group++;
 }
