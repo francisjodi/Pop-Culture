@@ -20,7 +20,7 @@ const syntaxErrors = [
   ["non-letter in an identifier", "lit ayo😭t = 2", /Line 1, col 8/],
   ["an expression starting with a *", "x = * 71;", /Line 1, col 5/],
   ["missing semicolon", '("This is a test")', /Line 1, col 19/],
-  ["a missing left operand", '("4 3*2)")'],
+  ["a missing left operand", '("6 7*2)")'],
 ]
 
 describe("The grammar", () => {
