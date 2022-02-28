@@ -28,17 +28,17 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 
 ## Types
 
-| Pop Culture              | JavaScript                     |
-| ------------------------ | ------------------------------ |
-| makeUpYourMind           | Boolean                        |
-| sayIt                    | String                         |
-| whatsYourNumber          | Numbers (ints parmaterzied )   |
-| didYouGetTheDigits       | Numbers (ints unlimited length |
-| whatYourFunction         | Function                       |
-| Let me check my calendar | Array/List                     |
-| I'm the map              | Map                            |
-| look it Up               | Dictionary                     |
-| my name is               | Class/ Object                  |
+| Pop Culture              | JavaScript                      |
+| ------------------------ | ------------------------------- |
+| makeUpYourMind           | Boolean                         |
+| sayIt                    | String                          |
+| whatsYourNumber          | Numbers (ints parmaterzied)     |
+| didYouGetTheDigits       | Numbers (ints unlimited length) |
+| whatYourFunction         | Function                        |
+| Let me check my calendar | Array/List                      |
+| I'm the map              | Map                             |
+| look it Up               | Dictionary                      |
+| my name is               | Class/Object                   |
 
 ## Variable Declration and Assignment
 
