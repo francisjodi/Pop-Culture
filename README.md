@@ -34,7 +34,7 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | sayIt                    | String                         |
 | whatsYourNumber          | Numbers (ints parmaterzied )   |
 | didYouGetTheDigits       | Numbers (ints unlimited length |
-| whatYourFunction         | Fucntion                       |
+| whatYourFunction         | Function                       |
 | Let me check my calendar | Array/List                     |
 | I'm the map              | Map                            |
 | look it Up               | Dictionary                     |
