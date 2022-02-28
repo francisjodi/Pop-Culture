@@ -21,7 +21,7 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
       initializer.ast()
     )
   },
-  Statement_funcdec(_fun, id, _open, params, _close, body, _semicolon) {
+  Statement_fundec(_fun, id, _open, params, _close, body, _semicolon) {
     return new core.FunctionDeclaration(id.ast(), params.asIteration().ast(), body.ast())
   },
   Statement_break(_break, _semicolon) {
@@ -29,9 +29,6 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   },
   Statement_return(_return, expression, _semicolon) {
     return new core.ReturnStatement(expression.ast())
-  },
-  Statement_short_return(_return, _semicolon) {
-    return new core.ShortReturnStatement()
   },
   Statement_print(_print, argument, _semicolon) {
     return new core.PrintStatement(argument.ast())
@@ -116,6 +113,9 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   },
   String(_openQuote, chars, _closeQuote) {
     return new core.Token("String", this.source)
+  },
+  _iter(...children) {
+    return children.map(child => child.ast())
   }
 })
 

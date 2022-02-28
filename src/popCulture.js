@@ -1,13 +1,3 @@
-// console.log("Hello World")
-
-// export function add(x, y) {
-//   return x + y
-// }
-
-// export function times(x, y) {
-//   return x * y
-// }
-
 import fs from "fs/promises"
 import process from "process"
 import compile from "./compiler.js"
@@ -22,13 +12,8 @@ ast          the abstract syntax tree
 `
 
 async function compileFromFile(filename, outputType) {
-  try {
-    const buffer = await fs.readFile(filename)
-    console.log(compile(buffer.toString(), outputType))
-  } catch (e) {
-    console.error(`\u001b[31m${e}\u001b[39m`)
-    process.exitCode = 1
-  }
+  const buffer = await fs.readFile(filename)
+  console.log(compile(buffer.toString(), outputType))
 }
 
 if (process.argv.length !== 4) {

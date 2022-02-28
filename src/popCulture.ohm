@@ -2,19 +2,17 @@ popCulture {
 
     Program     = Statement+
     Statement   = (let | const) id "=" Exp ";"                  -- vardec
-                | FuncDec                                       -- fundec
+                | function id "(" Params ")" Block ";"          -- fundec
                 | id "=" Exp ";"                                -- assign
                 | print Exp ";"                                 -- print
                 | Exp9_call ";"                                 -- call
                 | LoopStmt                 
                 | IfStmt                      
-                | return Exp ";"                                -- return
-                | return ";"                                    -- shortreturn
+                | return Exp* ";"                               -- return
                 | break ";"                                     -- break
                                                 
 
     Block       = "{" Statement* "}"
-    FuncDec     = function id "(" Params ")" Block ";"
     IfStmt      = if Exp Block else (Block | IfStmt)            -- long
                 | if Exp Block                                  -- short
                 

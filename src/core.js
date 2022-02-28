@@ -62,8 +62,8 @@ export class VariableDeclaration {
 }
 
 export class FunctionDeclaration {
-  constructor(func, params, body) {
-    Object.assign(this, { func, params, body })
+  constructor(fun, params, body) {
+    Object.assign(this, { fun, params, body })
   }
 }
 
@@ -74,8 +74,6 @@ export class ReturnStatement {
     this.expression = expression
   }
 }
-
-export class ShortReturnStatement {}
 
 export class IfStatement {
   constructor(test, consequent, alternate) {
