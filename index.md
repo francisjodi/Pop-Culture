@@ -6,6 +6,16 @@ Pop Culture is for people who love all aspects of entertainment. From movie quot
 Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, Erika Proctor
 
 ## Features
+- Static Typing
+- Object Oriented
+- Links to IMDb or Spotify
+- Conditional Satements
+- While loop 
+- Fuction Declaration
+- Built-In DataStrcutures
+- Single and MuliLine comments
+- Jump Statements
+- Variable Declaration
 
 ## Examples
 
