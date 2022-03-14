@@ -1,4 +1,4 @@
-## Welcome to Pop-Culture
+## Welcome to Pop-Culture!
 
 Pop Culture is for people who love all aspects of entertainment. From movie quotes to Tik Toks, this language has something for everyone who loves the world of pop culture. Pop culture is a programming language meant to be enjoyable and even have you reminisce about some of your favorite moments in pop culture history. In this language, you will see some of our favorite quotes from pop culture moments in films, television and more used for our syntax.
 
