@@ -22,7 +22,7 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 - Built-In DataStrcutures
 - Single and MuliLine comments
 - Jump Statements
-- Variable Declration
+- Variable Decalration
   <!-- - Abstract data Type  -->
   <!-- - Functions??? -->
 
