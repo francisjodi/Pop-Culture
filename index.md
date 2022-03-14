@@ -5,6 +5,12 @@ Pop Culture is for people who love all aspects of entertainment. From movie quot
 ## Authors
 Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, Erika Proctor
 
+## Features
+
+## Examples
+
+
+
 
 You can use the [editor on GitHub](https://github.com/francisjodi/Pop-Culture/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
