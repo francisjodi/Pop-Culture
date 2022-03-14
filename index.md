@@ -20,11 +20,11 @@ Izabela Aranda - Dooley, Nelson Davis, Jodi-Ann Francis, Sumaiyah Lee, Erika Pro
 
 
 ## Examples
-### 1
-### 2
-### 3
-### 4
-### 5
+##### 1
+##### 2
+##### 3
+##### 4
+##### 5
 
 You can use the [editor on GitHub](https://github.com/francisjodi/Pop-Culture/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
