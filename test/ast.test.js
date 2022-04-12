@@ -49,6 +49,7 @@ const expected5 = `   1 | Program statements=[#2]
    2 | ReturnStatement expression=[#3]
    3 | BinaryExpression left=(Int, "6") op='*' right=(Int, "7")`
    
+   
 describe("The AST generator", () => {
   it("Test 1: produces the expected AST for all node types", () => {
     assert.deepEqual(util.format(ast(source1)), expected1)
