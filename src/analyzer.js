@@ -72,6 +72,22 @@ Object.assign(Function.prototype, {
     }
 })
 
+class Context{
+    constructor({parent = null, locals = new Map(), inLoop = false, function: f = null }) {
+        Object.assign(this, { parent, locals, inLoop, function: f })
+    }
+    sees(name) {
+        return this.locals.has(name) || this.parent?.sees(name)
+    }
+    add(name, entity) {
+        // No shadowing! Prevent addition if id anywhere in scope chain! This is
+        // a Carlos thing. Many other languages allow shadowing, and in these,
+        // we would only have to check that name is not in this.locals
+        if (name in this.locals) error(`Identifier ${name} already declared`)
+        this.locals.set(name, entity)
+      }
+}
+
 export default function analyze(node) {
     const initialContext = new Context({})
     for (const [name, type] of Object.entries(stdlib.contents)) {
