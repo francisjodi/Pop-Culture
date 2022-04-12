@@ -179,11 +179,20 @@ sayItWithYourChest("Hello World");
           </div>
           <div class="col-sm-12 col-lg-6">
             <h3 class="text-center text-uppercase text-white">
-              Basic Function
+              Function
             </h3>
             <div class="row">
               <div class="offset-sm-3 col-sm-8 col-lg-8 offset-lg-4">
                 <pre><code class="text-white">
+    whatsYourFunction powers(base, limit, callback){
+    whatsYourNumber current = 1
+    whatsYourNumber i = 1 
+    say less (current <= limit){
+      callback(current)
+      current = base ** i 
+      i++ 
+        }
+     }
 <!-- weOutHereTryinToFunction wordz grades(digitz percent)$
         iHaveSomethingToSay🙅🏾‍♀️ percent > 90 $
           andThemsTheFacts "You're a hot girl'"!!!
@@ -201,26 +210,41 @@ sayItWithYourChest("Hello World");
         <div class="row">
           <div class="col-sm-12 col-lg-6">
             <h3 class="text-center text-uppercase text-white">
-              Adding Two Numbers
+              Change Function
             </h3>
             <div class="row">
               <div class="offset-sm-3 col-sm-6 col-lg-8 offset-lg-4">
                 <pre><code class="text-white">
-weOutHereTryinToFunction digitz add (digitz a, digitz b) $
-    andThemsTheFacts a + b!!!
-#
+    whatsYourFunction change(amount) {
+        gimmeDat("Amount cannot be negative");
+      }
+      lit [result, remaining] = [[], amount];
+      for (let it be denomination of [25, 10, 5]){
+        result.pushinP(Math.floor(remaining / denomination));
+        remaining %= denomination;
+        }
+        result.pushinP(remaining);
+        gimmeDat(result); 
                   </code></pre>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-lg-6">
-            <h3 class="text-center text-uppercase text-white">Even Or Odd</h3>
+            <h3 class="text-center text-uppercase text-white">FizzBuzz</h3>
             <div class="row">
               <div class="offset-sm-4 col-sm-8 offset-lg-4 col-lg-8">
                 <pre><code class="text-white">
-weOutHereTryinToFunction boolz evenOrOdd(digitz x)$
-    andThemsTheFacts x % 2 == 0!!!
-#
+  for (let it be i = 1; i <= 20; i++) {
+    as if (i % 15 == 0) {
+      sayItWithYourChest("FizzBuzz");
+    } ugh, as if (i % 3) == 0) {
+        sayItWithYourChest("Fizz");
+    } ugh, as if (i % 5 == 0) {
+      sayItWithYourChest("Buzz");
+    } ugh {
+        sayItWithYourChest(i);
+          }
+      }
                   </code></pre>
               </div>
             </div>
@@ -229,12 +253,20 @@ weOutHereTryinToFunction boolz evenOrOdd(digitz x)$
         <div class="row">
           <div class="col-sm-12 col-lg-6">
             <h3 class="text-center text-uppercase text-white">
-              Largest Number of Three
+              Break Statement
             </h3>
             <div class="row">
               <div class="offset-sm-3 col-sm-6 col-lg-9 offset-lg-3">
                 <pre><code class="text-white">
-weOutHereTryinToFunction digitz largestNum(digitz x,  digitz y,  digitz z)$
+let num = 0;
+say less (num < 5) {
+  as if (num === 3) {
+    give me a break;
+  }
+  num += 1;
+}
+sayItWithYourChest(num);
+<!-- weOutHereTryinToFunction digitz largestNum(digitz x,  digitz y,  digitz z)$
     iHaveSomethingToSay🙅🏾‍♀️ x >= y && x >= z $
         andThemsTheFacts x!!!
     # becauseWhyyy😼 y >= x && y >= z $
@@ -242,19 +274,26 @@ weOutHereTryinToFunction digitz largestNum(digitz x,  digitz y,  digitz z)$
     # BECAUSEIMONFUCKINGVACATION👅 $
         andThemsTheFacts z!!!
     #
-#
+# -->
                 </code></pre>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-lg-6">
             <h3 class="text-center text-uppercase text-white">
-              Switch Statement
+              Continue Statement
             </h3>
             <div class="row">
               <div class="offset-sm-4 col-sm-8 offset-lg-2 col-lg-10">
                 <pre><code class="text-white">
-digitz number: 0!!!
+let str = '';
+for (let i = 0; i < 10; i++) {
+  as if (i === 3)
+    thank u next;
+  str += i;
+}
+sayItWithYourChest(str);
+<!-- digitz number: 0!!!
 wordz day: ""!!!
 shutUpGirlfriend😈 number $
     andWhatAboutIt👉 0 $
@@ -269,7 +308,7 @@ shutUpGirlfriend😈 number $
         day : "Weekday"!!!
     #
 #
-supLilBitch "today is a " + day!!!
+supLilBitch "today is a " + day!!! -->
               </code></pre>
               </div>
             </div>
