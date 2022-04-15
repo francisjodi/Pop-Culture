@@ -71,6 +71,18 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | <=          | <=         |
 | >=          | >=         |
 
+## Semantic Errors 
+* Break can only appear in a loop 
+* return can only appear in a function 
+* expect a boolean when necessary 
+* expect an array in a for loop 
+* can have different types
+*  expect a number when necessary 
+*  expect a string when necessary 
+*  number of arguments passed in for number of arguments required 
+*  when a type is expected
+
+
 ## Comments
 
 **Single-Line Comment**
