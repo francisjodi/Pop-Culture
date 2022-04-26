@@ -80,9 +80,7 @@ class Context{
         return this.locals.has(name) || this.parent?.sees(name)
     }
     add(name, entity) {
-        // No shadowing! Prevent addition if id anywhere in scope chain! This is
-        // a Carlos thing. Many other languages allow shadowing, and in these,
-        // we would only have to check that name is not in this.locals
+        // Pop Culture allows for shadowing
         if (name in this.locals) error(`Identifier ${name} already declared`)
         this.locals.set(name, entity)
       }
