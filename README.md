@@ -16,13 +16,14 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 - Static Typing
 - Object Oriented
 - Links to IMDb or Spotify
-- Conditional Satements
-- While loop 
-- Fuction Declaration
-- Built-In DataStrcutures
-- Single and MuliLine comments
+- Conditional Statements
+- While loop
+- Function Declaration
+- Built-In Data Structures
+- Single and Multi Line comments
 - Jump Statements
-- Variable Decalration
+- Variable Declaration
+
   <!-- - Abstract data Type  -->
   <!-- - Functions??? -->
 
