@@ -11,8 +11,6 @@ const expected1 = `   1 | Program statements=[#2]
    3 | ReturnStatement expression=[#4]
    4 | BinaryExpression left=(Id, "counter") op='+' right=(Int, "1000")`
 
-
-
 const source2 = `whatsYourFunction rollTwoDie(a, b){
     as if((a+b) >= 6) {
     	gimmeDat("You won");
@@ -42,13 +40,18 @@ const expected3 = `   1 | Program statements=[#2,#4]
 const source4 = `lit newArray = [];`
 const expected4 = `   1 | Program statements=[#2]
    2 | VariableDeclaration modifier='lit' variable=(Id, "newArray") initializer=#3
-   3 | EmptyArray`
+   3 | EmptyArray `
 
 const source5 = `gimmeDat(6 * 7);`
 const expected5 = `   1 | Program statements=[#2]
    2 | ReturnStatement expression=[#3]
    3 | BinaryExpression left=(Int, "6") op='*' right=(Int, "7")`
-   
+
+const source6 = `sayItWithYourChest f(x);`
+const expected6 = `   1 | Program statements=[#2]
+  2 | PrintStatement expression=[#3]
+  3 | Call callee=(Id, "f") args=[(Id, "x")]`
+
 describe("The AST generator", () => {
   it("Test 1: produces the expected AST for all node types", () => {
     assert.deepEqual(util.format(ast(source1)), expected1)
@@ -64,5 +67,8 @@ describe("The AST generator", () => {
   })
   it("Test 5: produces the expected AST for all node types", () => {
     assert.deepEqual(util.format(ast(source5)), expected5)
+  })
+  it("Test 6: produces the expected AST for all node types", () => {
+    assert.deepEqual(util.format(ast(source6)), expected6)
   })
 })
