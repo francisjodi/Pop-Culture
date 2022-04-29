@@ -53,7 +53,7 @@ popCulture {
 
     Call         = id "(" Args ")"                           
     Params       =  ListOf<id, ",">
-    Arg          =  id ":" Exp
+    Arg          =  Exp
     Args         =  ListOf<Arg, ",">
     String       = "\"" letter* "\""
 
