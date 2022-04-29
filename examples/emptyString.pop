@@ -1,0 +1,2 @@
+lit x = "";
+makeUpYourMind(x);
