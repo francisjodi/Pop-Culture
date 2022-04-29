@@ -1,11 +1,10 @@
 shh this does not yet reflect our updated grammar
-whatsYourFunction powers(base, limit, callback){
-  whatsYourNumber current = 1
-  whatsYourNumber i = 1 
+whatsYourFunction powers(base, limit, callback) whatsYourNUmber {
+  lit current = 1
+  lit i = 1 
   say less (current <= limit){
     callback(current)
     current = base ** i 
     i++ 
   }
 }
-
