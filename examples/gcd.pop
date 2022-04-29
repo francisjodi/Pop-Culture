@@ -1,4 +1,3 @@
-shh this does not yet reflect our updated grammar
 whatsYourFunction gcd(a, b){
     as if (b == 0) {
         gimmeDat(a);

@@ -1,2 +1,2 @@
 lit x = "";
-makeUpYourMind(x);
+boolean (x);
