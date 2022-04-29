@@ -1,6 +1,6 @@
-import { Type } from "js-yaml"
 import {
   Program,
+  Type,
   Assignment,
   Call,
   Variable,
@@ -38,46 +38,46 @@ Object.assign(Type.prototype, {
   },
 })
 
-Object.assign(ArrayExpression.prototype, {
-  isEquivalentTo(target) {
-    return (
-      target.constructor === ArrayExpression &&
-      this.baseType.isEquivalentTo(target.baseType)
-    )
-  },
-  isAssignableTo(target) {
-    return this.isEquivalentTo(target)
-  },
-})
+// Object.assign(ArrayExpression.prototype, {
+//   isEquivalentTo(target) {
+//     return (
+//       target.constructor === ArrayExpression &&
+//       this.baseType.isEquivalentTo(target.baseType)
+//     )
+//   },
+//   isAssignableTo(target) {
+//     return this.isEquivalentTo(target)
+//   },
+// })
 
-Object.assign(SubscriptExpression.prototype, {
-  isEquivalentTo(target) {
-    return (
-      target.constructor == SubscriptExpression &&
-      this.array.baseType.isEquivalentTo(target.array.baseType)
-    )
-  },
-  isAssignableTo(target) {
-    return this.isEquivalentTo(target)
-  },
-})
+// Object.assign(SubscriptExpression.prototype, {
+//   isEquivalentTo(target) {
+//     return (
+//       target.constructor == SubscriptExpression &&
+//       this.array.baseType.isEquivalentTo(target.array.baseType)
+//     )
+//   },
+//   isAssignableTo(target) {
+//     return this.isEquivalentTo(target)
+//   },
+// })
 
-Object.assign(Function.prototype, {
-  isEquivalentTo(target) {
-    return (
-      target.constructor === Function &&
-      this.paramCount === target.paramCount &&
-      this.readOnly === target.readOnly
-    )
-  },
-  isAssignableTo(target) {
-    return (
-      target.constructor === Function &&
-      this.paramCount === target.paramCount &&
-      this.readOnly === target.readOnly
-    )
-  },
-})
+// Object.assign(Function.prototype, {
+//   isEquivalentTo(target) {
+//     return (
+//       target.constructor === Function &&
+//       this.paramCount === target.paramCount &&
+//       this.readOnly === target.readOnly
+//     )
+//   },
+//   isAssignableTo(target) {
+//     return (
+//       target.constructor === Function &&
+//       this.paramCount === target.paramCount &&
+//       this.readOnly === target.readOnly
+//     )
+//   },
+// })
 
 /**************************
  *  VALIDATION FUNCTIONS  *
@@ -103,13 +103,23 @@ function checkBoolean(e) {
 //      check(e.type.contructor === DictionaryType, "Dictrionaty expected", e)
 //  }
 
-//   function checkInteger(e) {
-//     checkType(e, [Type.INT], "an integer")
-//   }
+function checkInteger(e) {
+  checkType(e, [Type.INT], "an integer")
+}
 
-// function checkString(e) {
-//     checkType(e, [Type.STRING], "a string")
-// }
+function checkString(e) {
+  checkType(e, [Type.STRING], "a string")
+}
+
+function checkHaveSameType(e1, e2) {
+  console.log("left type", e1.type)
+  console.log("right type", e2.type)
+  check(e1.type.isEquivalentTo(e2.type), "Operands do not have the same type")
+}
+
+function checkNumericOrString(e) {
+  checkType(e, [Type.INT, Type.STRING], "a number or string")
+}
 
 function checkIsAType(e) {
   check(e instanceof Type, "Type expected", e)
@@ -160,7 +170,7 @@ class Context {
     this.locals.set(name, entity)
   }
   analyze(node) {
-    console.log(node.constructor)
+    //console.log(node.constructor)
     return this[node.constructor.name](node)
   }
   Program(p) {
