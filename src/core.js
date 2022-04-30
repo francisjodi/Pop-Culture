@@ -30,6 +30,16 @@ export class Function {
   }
 }
 
+export class Type {
+  // Type of all basic type int, float, string, etc. and superclass of others
+  static BOOLEAN = new Type("bool")
+  static INT = new Type("int")
+  static STRING = new Type("string")
+  static ANY = new Type("any")
+  constructor(description) {
+    Object.assign(this, { description })
+  }
+}
 
 export class WhileStatement {
   constructor(expression, body) {
@@ -44,8 +54,8 @@ export class PrintStatement {
 }
 
 export class BinaryExpression {
-  constructor(left, op, right) {
-    Object.assign(this, { left, op, right })
+  constructor(op, left, right) {
+    Object.assign(this, { op, left, right })
   }
 }
 
@@ -106,7 +116,6 @@ export class SubscriptExpression {
     Object.assign(this, { array, index })
   }
 }
-
 
 export class Token {
   constructor(category, source) {

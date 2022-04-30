@@ -1,5 +1,4 @@
-shh this does not yet reflect our updated grammar
-for (let it be i = 1; i <= 20; i++) {
+for (lit it be i = 1; i <= 20; i++) {
     as if (i % 15 == 0) {
         sayItWithYourChest("FizzBuzz");
     } ugh, as if (i % 3) == 0) {

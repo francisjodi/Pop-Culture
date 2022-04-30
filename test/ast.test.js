@@ -9,7 +9,7 @@ const source1 = `whatsYourFunction getMoney(counter) {
 const expected1 = `   1 | Program statements=[#2]
    2 | FunctionDeclaration fun=(Id, "getMoney") params=[(Id, "counter")] body=[#3]
    3 | ReturnStatement expression=[#4]
-   4 | BinaryExpression left=(Id, "counter") op='+' right=(Int, "1000")`
+   4 | BinaryExpression op='+' left=(Id, "counter") right=(Int, "1000")`
 
 const source2 = `whatsYourFunction rollTwoDie(a, b){
     as if((a+b) >= 6) {
@@ -21,8 +21,8 @@ const source2 = `whatsYourFunction rollTwoDie(a, b){
 const expected2 = `   1 | Program statements=[#2]
    2 | FunctionDeclaration fun=(Id, "rollTwoDie") params=[(Id, "a"),(Id, "b")] body=[#3]
    3 | IfStatement test=#4 consequent=[#6] alternate=[#7]
-   4 | BinaryExpression left=#5 op='>=' right=(Int, "6")
-   5 | BinaryExpression left=(Id, "a") op='+' right=(Id, "b")
+   4 | BinaryExpression op='>=' left=#5 right=(Int, "6")
+   5 | BinaryExpression op='+' left=(Id, "a") right=(Id, "b")
    6 | ReturnStatement expression=[(String, ""You won"")]
    7 | ReturnStatement expression=[(String, ""You lost"")]`
 
@@ -45,12 +45,12 @@ const expected4 = `   1 | Program statements=[#2]
 const source5 = `gimmeDat(6 * 7);`
 const expected5 = `   1 | Program statements=[#2]
    2 | ReturnStatement expression=[#3]
-   3 | BinaryExpression left=(Int, "6") op='*' right=(Int, "7")`
+   3 | BinaryExpression op='*' left=(Int, "6") right=(Int, "7")`
 
-const source6 = `sayItWithYourChest f(count:x);`
+const source6 = `sayItWithYourChest f(2);`
 const expected6 = `   1 | Program statements=[#2]
-  2 | PrintStatement expression=[#3]
-  3 | Call callee=(Id, "f") args=[(Id, "x")]`
+   2 | PrintStatement expression=#3
+   3 | Call callee=(Id, "f") args=[(Int, "2")]`
 
 describe("The AST generator", () => {
   it("Test 1: ", () => {

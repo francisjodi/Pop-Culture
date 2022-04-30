@@ -22,7 +22,11 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
     )
   },
   Statement_fundec(_fun, id, _open, params, _close, body, _semicolon) {
-    return new core.FunctionDeclaration(id.ast(), params.asIteration().ast(), body.ast())
+    return new core.FunctionDeclaration(
+      id.ast(),
+      params.asIteration().ast(),
+      body.ast()
+    )
   },
   Statement_break(_break, _semicolon) {
     return new core.BreakStatement()
@@ -76,24 +80,24 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
     return operands.reduce((x, y) => new core.BinaryExpression("&", x, y))
   },
   Exp4_compare(left, op, right) {
-    return new core.BinaryExpression(left.ast(), op.sourceString, right.ast())
+    return new core.BinaryExpression(op.sourceString, left.ast(), right.ast())
   },
   Exp5_shift(left, op, right) {
-    return new core.BinaryExpression(left.ast(), op.sourceString, right.ast())
+    return new core.BinaryExpression(op.sourceString, left.ast(), right.ast())
   },
   Exp6_add(left, op, right) {
-    return new core.BinaryExpression(left.ast(), op.sourceString, right.ast())
+    return new core.BinaryExpression(op.sourceString, left.ast(), right.ast())
   },
   Exp7_multiply(left, op, right) {
-    return new core.BinaryExpression(left.ast(), op.sourceString, right.ast())
+    return new core.BinaryExpression(op.sourceString, left.ast(), right.ast())
   },
   Exp8_power(left, op, right) {
-    return new core.BinaryExpression(left.ast(), op.sourceString, right.ast())
+    return new core.BinaryExpression(op.sourceString, left.ast(), right.ast())
   },
   Exp8_unary(op, operand) {
     return new core.UnaryExpression(op.sourceString, operand.ast())
   },
-  Exp9_emptyarray( _left, _right) {
+  Exp9_emptyarray(_left, _right) {
     return new core.EmptyArray()
   },
   Exp9_arrayexp(_left, args, _right) {
@@ -114,12 +118,18 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   num(_digits) {
     return new core.Token("Int", this.source)
   },
-  String(_openQuote, chars, _closeQuote) {
+  true(_) {
+    return new core.Token("Bool", this.source)
+  },
+  false(_) {
+    return new core.Token("Bool", this.source)
+  },
+  string(_openQuote, chars, _closeQuote) {
     return new core.Token("String", this.source)
   },
   _iter(...children) {
-    return children.map(child => child.ast())
-  }
+    return children.map((child) => child.ast())
+  },
 })
 
 export default function ast(sourceCode) {

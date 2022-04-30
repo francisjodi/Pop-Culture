@@ -45,7 +45,9 @@ popCulture {
                 | Exp9 ("(" | "?(") Args ")"                    -- call
                 | num
                 | id                                            -- id
-                | String                                        -- string
+                | string                                        -- string
+                | true
+                | false
                 | "[" "]"                                       -- emptyarray
                 | "[" NonemptyListOf<Exp, ","> "]"              -- arrayexp
                 | "(" Exp ")"                                   -- parens   
@@ -53,9 +55,9 @@ popCulture {
 
     Call         = id "(" Args ")"                           
     Params       =  ListOf<id, ",">
-    Arg          =  id ":" Exp
+    Arg          =  Exp
     Args         =  ListOf<Arg, ",">
-    String       = "\"" letter* "\""
+    string       = "\"" (~"\"" ~"\n" any)* "\""
 
     boolean      = "makeUpYourMind" ~alnum
     let          = "lit" ~alnum
@@ -73,9 +75,11 @@ popCulture {
     push         = "pushinP" ~alnum
     singleLnCmt  = "shh" ~alnum
     return       = "gimmeDat" ~alnum
+    true         = "forRealz" ~alnum
+    false        = "urDone" ~alnum
     keyword      = let | const | print | return | break | continue | while |
                     for | in | if | elseif | else | function | push 
-                    | singleLnCmt 
+                    | singleLnCmt | true | false
 
     num          = digit+ 
     id           =  ~keyword (letter | "_") (letter | digit | "_")*
