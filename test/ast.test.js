@@ -47,28 +47,28 @@ const expected5 = `   1 | Program statements=[#2]
    2 | ReturnStatement expression=[#3]
    3 | BinaryExpression left=(Int, "6") op='*' right=(Int, "7")`
 
-const source6 = `sayItWithYourChest f(x);`
+const source6 = `sayItWithYourChest f(count:x);`
 const expected6 = `   1 | Program statements=[#2]
   2 | PrintStatement expression=[#3]
   3 | Call callee=(Id, "f") args=[(Id, "x")]`
 
 describe("The AST generator", () => {
-  it("Test 1: produces the expected AST for all node types", () => {
+  it("Test 1: ", () => {
     assert.deepEqual(util.format(ast(source1)), expected1)
   })
-  it("Test 2: produces the expected AST for all node types", () => {
+  it("Test 2: ", () => {
     assert.deepEqual(util.format(ast(source2)), expected2)
   })
-  it("Test 3: produces the expected AST for all node types", () => {
+  it("Test 3: ", () => {
     assert.deepEqual(util.format(ast(source3)), expected3)
   })
-  it("Test 4: produces the expected AST for all node types", () => {
+  it("Test 4: ", () => {
     assert.deepEqual(util.format(ast(source4)), expected4)
   })
-  it("Test 5: produces the expected AST for all node types", () => {
+  it("Test 5: ", () => {
     assert.deepEqual(util.format(ast(source5)), expected5)
   })
-  it("Test 6: produces the expected AST for all node types", () => {
+  it("Test 6: ", () => {
     assert.deepEqual(util.format(ast(source6)), expected6)
   })
 })

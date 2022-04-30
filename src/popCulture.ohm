@@ -5,7 +5,7 @@ popCulture {
                 | function id "(" Params ")" Block ";"          -- fundec
                 | id "=" Exp ";"                                -- assign
                 | print Exp ";"                                 -- print
-                | Exp9_call ";"                                 -- call
+                | Call ";"                                      -- call
                 | LoopStmt                 
                 | IfStmt                      
                 | return Exp* ";"                               -- return
@@ -57,6 +57,7 @@ popCulture {
     Args         =  ListOf<Arg, ",">
     String       = "\"" letter* "\""
 
+    boolean      = "makeUpYourMind" ~alnum
     let          = "lit" ~alnum
     const        = "stickIt" ~alnum
     print        = "sayItWithYourChest" ~alnum
