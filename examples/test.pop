@@ -1,8 +1,4 @@
-lit decision = forRealz;
-lit count = 0;
-as if (decision == urDone) {
-    count = count + 1;
-    period;
-} ugh {
-    count =  count ** 2;
+lit decision = urDone;
+sayLess (!decision) {
+    sayItWithYourChest 0;
 }

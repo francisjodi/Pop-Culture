@@ -100,6 +100,39 @@ const expected9 = `   1 | Program statements=[#2,#3,#4,#5]
   11 | ReturnStatement expression=[(Int, "0")]
   12 | Array 0=#13
   13 | ReturnStatement expression=[(Int, "3")]`
+
+const source10 = `whatsYourFunction forward(number) {
+    gimmeDat(number);
+};
+forward(3 * 7 ?? 1 && 2);`
+const expected10 = `   1 | Program statements=[#2,#4]
+   2 | FunctionDeclaration fun=(Id, "forward") params=[(Id, "number")] body=[#3]
+   3 | ReturnStatement expression=[(Id, "number")]
+   4 | Call id=(Id, "forward") args=[#5]
+   5 | BinaryExpression op='??' left=#6 right=#7
+   6 | BinaryExpression op='*' left=(Int, "3") right=(Int, "7")
+   7 | BinaryExpression op='&&' left=(Int, "1") right=(Int, "2")`
+
+const source11 = `sayItWithYourChest(5 | 3);
+sayItWithYourChest(5 & 3);
+sayItWithYourChest(5 ^ 3);`
+const expected11 = `   1 | Program statements=[#2,#4,#6]
+   2 | PrintStatement expression=#3
+   3 | BinaryExpression op='|' left=(Int, "5") right=(Int, "3")
+   4 | PrintStatement expression=#5
+   5 | BinaryExpression op='&' left=(Int, "5") right=(Int, "3")
+   6 | PrintStatement expression=#7
+   7 | BinaryExpression op='^' left=(Int, "5") right=(Int, "3")`
+
+const source12 = `lit decision = urDone;
+sayLess (!decision) {
+    sayItWithYourChest 0;
+}`
+const expected12 = `   1 | Program statements=[#2,#3]
+   2 | VariableDeclaration modifier='lit' variable=(Id, "decision") initializer=(Bool, "urDone")
+   3 | WhileStatement expression=#4 body=[#5]
+   4 | UnaryExpression op='!' operand=(Id, "decision")
+   5 | PrintStatement expression=(Int, "0")`
 describe("The AST generator", () => {
   it("Test 1: ", () => {
     assert.deepEqual(util.format(ast(source1)), expected1)
@@ -127,5 +160,14 @@ describe("The AST generator", () => {
   })
   it("Test 9: ", () => {
     assert.deepEqual(util.format(ast(source9)), expected9)
+  })
+  it("Test 10: ", () => {
+    assert.deepEqual(util.format(ast(source10)), expected10)
+  })
+  it("Test 11: ", () => {
+    assert.deepEqual(util.format(ast(source11)), expected11)
+  })
+  it("Test 12: ", () => {
+    assert.deepEqual(util.format(ast(source12)), expected12)
   })
 })
