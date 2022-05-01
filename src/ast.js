@@ -3,7 +3,9 @@ import ohm from "ohm-js"
 import * as core from "./core.js"
 
 const popCultureGrammar = ohm.grammar(fs.readFileSync("src/popCulture.ohm"))
-
+function arrayToNullable(a) {
+  return a.length === 0 ? null : a[0]
+}
 const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   Program(body) {
     return new core.Program(body.ast())
@@ -37,12 +39,15 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   Statement_print(_print, argument, _semicolon) {
     return new core.PrintStatement(argument.ast())
   },
-  IfStmt_long(_if, test, consequent, _else, alternate) {
-    return new core.IfStatement(test.ast(), consequent.ast(), alternate.ast())
+  IfStmt(_1, firstTest, firstBlock, _2, moreTests, moreBlocks, _3, lastBlock) {
+    const tests = [firstTest.ast(), ...moreTests.ast()]
+    const consequents = [firstBlock.ast(), ...moreBlocks.ast()]
+    const alternate = arrayToNullable(lastBlock.ast())
+    return new core.IfStatement(tests, consequents, alternate)
   },
-  IfStmt_short(_if, test, consequent) {
-    return new core.ShortIfStatement(test.ast(), consequent.ast())
-  },
+  // IfStmt_short(_if, test, consequent) {
+  //   return new core.ShortIfStatement(test.ast(), consequent.ast())
+  // },
   LoopStmt_while(_while, test, body) {
     return new core.WhileStatement(test.ast(), body.ast())
   },

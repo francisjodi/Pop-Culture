@@ -86,16 +86,16 @@ export class ReturnStatement {
 }
 
 export class IfStatement {
-  constructor(test, consequent, alternate) {
-    Object.assign(this, { test, consequent, alternate })
+  constructor(test, consequents, alternate) {
+    Object.assign(this, { test, consequents, alternate })
   }
 }
 
-export class ShortIfStatement {
-  constructor(test, consequent) {
-    Object.assign(this, { test, consequent })
-  }
-}
+// export class ShortIfStatement {
+//   constructor(test, consequent) {
+//     Object.assign(this, { test, consequent })
+//   }
+// }
 
 export class ForStatement {
   constructor(iterator, collection, body) {

@@ -52,6 +52,28 @@ const expected6 = `   1 | Program statements=[#2]
    2 | PrintStatement expression=#3
    3 | Call callee=(Id, "f") args=[(Int, "2")]`
 
+const source7 = `lit decision = forRealz;
+lit count = 0;
+as if (decision == urDone) {
+    count = count + 1;
+} ugh {
+    count =  count ** 2;
+}`
+const expected7 = `   1 | Program statements=[#2,#3,#4]
+   2 | VariableDeclaration modifier='lit' variable=(Id, "decision") initializer=(Bool, "urDone")
+   3 | VariableDeclaration modifier='lit' variable=(Id, "count") initializer=(Int, "0")
+   4 | IfStatement test=#5 consequent=[#6] alternate=[#8]
+   5 | BinaryExpression op='==' left=(Id, "decision") right=(Bool, "urDone")
+   6 | Assignment target=(Id, "count") source=#7
+   7 | BinaryExpression op='+' left=(Id, "count") right=(Int, "1")
+   8 | Assignment target=(Id, "count") source=#9
+   9 | BinaryExpression op='**' left=(Id, "count") right=(Int, "2")`
+
+const source8 = `sayItWithYourChest(5 << 2);`
+const expected8 = `   1 | Program statements=[#2]
+   2 | PrintStatement expression=#3
+   3 | BinaryExpression op='<<' left=(Int, "5") right=(Int, "2")`
+
 describe("The AST generator", () => {
   it("Test 1: ", () => {
     assert.deepEqual(util.format(ast(source1)), expected1)
@@ -70,5 +92,11 @@ describe("The AST generator", () => {
   })
   it("Test 6: ", () => {
     assert.deepEqual(util.format(ast(source6)), expected6)
+  })
+  it("Test 7: ", () => {
+    assert.deepEqual(util.format(ast(source7)), expected7)
+  })
+  it("Test 8: ", () => {
+    assert.deepEqual(util.format(ast(source8)), expected8)
   })
 })

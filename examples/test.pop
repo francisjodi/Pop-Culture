@@ -1,1 +1,8 @@
-sayItWithYourChest(1);
+lit count = 0;
+lit x = 0;
+lit y = 1;
+as if ((x > y) || (x < y)) {
+    gimmeDat(0);
+} ugh as if (x == y) {
+    gimmeDat(3);
+}

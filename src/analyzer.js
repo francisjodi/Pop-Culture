@@ -14,7 +14,6 @@ import {
   BreakStatement,
   ReturnStatement,
   IfStatement,
-  ShortIfStatement,
   ForStatement,
   EmptyArray,
   ArrayExpression,
