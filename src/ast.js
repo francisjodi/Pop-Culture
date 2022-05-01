@@ -13,8 +13,8 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   Statement_assign(variable, _eq, expression, _semicolon) {
     return new core.Assignment(variable.ast(), expression.ast())
   },
-  Statement_call(call, _semicolon) {
-    return call.ast()
+  Call_call(id, _open, args, _close, _semicolon) {
+    return new core.Call(id.ast(), args.asIteration().ast())
   },
   Statement_vardec(modifier, id, _eq, initializer, _semicolon) {
     return new core.VariableDeclaration(
@@ -114,9 +114,9 @@ const astBuilder = popCultureGrammar.createSemantics().addOperation("ast", {
   Exp9_subscript(array, _left, subscript, _right) {
     return new core.SubscriptExpression(array.ast(), subscript.ast())
   },
-  Exp9_call(callee, _left, args, _right) {
-    return new core.Call(callee.ast(), args.asIteration().ast())
-  },
+  // Exp9_call(callee, _left, args, _right) {
+  //   return new core.Call(callee.ast(), args.asIteration().ast())
+  // },
   id(_first, _rest) {
     return new core.Token("Id", this.source)
   },

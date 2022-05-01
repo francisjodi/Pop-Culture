@@ -13,8 +13,8 @@ export class Assignment {
 }
 
 export class Call {
-  constructor(callee, args) {
-    Object.assign(this, { callee, args })
+  constructor(id, args) {
+    Object.assign(this, { id, args })
   }
 }
 

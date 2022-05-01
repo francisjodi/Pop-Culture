@@ -5,7 +5,7 @@ popCulture {
                 | function id "(" Params ")" Block ";"          -- fundec
                 | id "=" Exp ";"                                -- assign
                 | print Exp ";"                                 -- print
-                | Call ";"                                      -- call
+                | Call 
                 | LoopStmt                 
                 | IfStmt                      
                 | return Exp* ";"                               -- return
@@ -14,7 +14,7 @@ popCulture {
 
     Block       = "{" Statement* "}"
     IfStmt      = if Exp Block (elseif Exp Block)*
-                (else Block)?                                   -- if
+                (else Block)?                                   
                 
     LoopStmt    = while Exp Block                               -- while
                 | for id in Exp Block                           -- for
@@ -42,7 +42,6 @@ popCulture {
                 | Exp9
                 | ("#" | "-" | "!" ) Exp9                       -- unary
     Exp9        = Exp9 ("[" | "?[") Exp "]"                     -- subscript
-                | Exp9 ("(" | "?(") Args ")"                    -- call
                 | num
                 | id                                            -- id
                 | string                                        -- string
@@ -53,7 +52,7 @@ popCulture {
                 | "(" Exp ")"                                   -- parens   
 
 
-    Call         = id "(" Args ")"                           
+    Call         = id "(" (Args | Arg) ")" ";"                  -- call                             
     Params       =  ListOf<id, ",">
     Arg          =  Exp
     Args         =  ListOf<Arg, ",">
