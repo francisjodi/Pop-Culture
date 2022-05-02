@@ -205,6 +205,11 @@ class Context {
       this.analyze(s.alternate)
     }
   }
+  ShortIfStatement(s) {
+    this.analyze(s.test)
+    checkBoolean(s.test)
+    this.newChildContext().analyze(s.consequent)
+  }
   WhileStatement(s) {
     this.analyze(s.test)
     checkBoolean(s.test)
