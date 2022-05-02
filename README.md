@@ -22,7 +22,7 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 - Built-In Data Structures
 - Single and Multi Line comments
 - Jump Statements
-<!-- - Variable Declaration -->
+- Variable Declaration
 
   <!-- - Abstract data Type  -->
   <!-- - Functions??? -->
@@ -41,17 +41,18 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | look it Up               | Dictionary                      |
 | my name is               | Class/Object                   | -->
 
-<!-- ## Variable Declration and Assignment
+## Variable Declration and Assignment
 
 | Pop Culture                                                             | JavaScript                                       |
-| ----------------------------------------------------------------------- | ------------------------------------------------ |
-| whatsYourNumber a = 2                                                   | let a = 2                                        |
-| didYouGetTheDigits b = 3.9                                              | let b = 3.9                                      |
+| ----------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| lit a = 2                                                               | let a = 2                                        |
+| stikIt b = 3                                                            | const b = 4                                      |
+| <!--                                                                    | didYouGetTheDigits b = 3.9                       | let b = 3.9 |
 | sayIt c = "Soy Dora"                                                    | let c = "Soy Dora"                               |
 | makeUpYourMind d = true                                                 | let d = true                                     |
 | makeUpYourMind e = false                                                | let e = false                                    |
 | Let me check my calendar = girlBoss = ["Monday", "Wednesday", "Friday"] | let girlBoss = ["Monday", "Wednesday", "Friday"] |
-| Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} | -->
+| Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} | -->         |
 
 ## Operators and Comparators
 
