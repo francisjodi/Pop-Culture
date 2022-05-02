@@ -43,16 +43,10 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 
 ## Variable Declration and Assignment
 
-| Pop Culture                                                             | JavaScript                                       |
-| ----------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
-| lit a = 2                                                               | let a = 2                                        |
-| stikIt b = 3                                                            | const b = 4                                      |
-| <!--                                                                    | didYouGetTheDigits b = 3.9                       | let b = 3.9 |
-| sayIt c = "Soy Dora"                                                    | let c = "Soy Dora"                               |
-| makeUpYourMind d = true                                                 | let d = true                                     |
-| makeUpYourMind e = false                                                | let e = false                                    |
-| Let me check my calendar = girlBoss = ["Monday", "Wednesday", "Friday"] | let girlBoss = ["Monday", "Wednesday", "Friday"] |
-| Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} | -->         |
+| Pop Culture  | JavaScript  |
+| ------------ | ----------- |
+| lit a = 3    | let a = 3   |
+| stikIt b = 4 | const b = 4 |
 
 ## Operators and Comparators
 
