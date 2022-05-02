@@ -8,6 +8,12 @@ const semanticChecks = [
   ["the printing of strings", 'sayItWithYourChest "I’m dead 💀💀";'],
   ["the printing of booleans", "sayItWithYourChest forRealz;"],
   ["the printing of booleans", "sayItWithYourChest urDone;"],
+
+  // ["function declaration","whatsYourFunction i (){period;};" ],
+  // ["while lop", "sayLess i < 3 {sayItWithYourChest forRealz;}"],
+  // ["for loop", "keepItUp i innit 1 {sayItWithYourChest 0;}"],
+
+  
   // ["variable declarations", 'lit x = 1; y = "false";'],
   // ["initialize with empty array", "let a = [](of int);"],
   // ["empty list", "list a= []"][("assign arrays", "let b=[1];a=b;b=a;")],
@@ -26,9 +32,6 @@ const semanticChecks = [
   ["&&", "sayItWithYourChest(forRealz&&urDone&&forRealz);"],
   ["bit ops", "sayItWithYourChest((1&2)|(9^3));"],
   //["relations", 'sayItWithYourChest(1<=2 && "x">"y" && 3<1);'],
-  // ["ok to == arrays", "sayItWithYourChest([1]==[5,8]);"],
-  // ["ok to != arrays", "sayItWithYourChest([1]!=[5,8]);"],
-  // ["shifts", "sayItWithYourChest(1<<3<<5<<8>>2>>0);"],
   // ["arithmetic", "let x=1;sayItWithYourChest(2*3+5**-3/2-5%8);"],
   // ["array length", "sayItWithYourChest(#[1,2,3]);"],
   // ["variables", "let x=[[[[1]]]]; sayItWithYourChest(x[0][0][0][0]+2);"],
