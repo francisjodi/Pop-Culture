@@ -22,12 +22,12 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 - Built-In Data Structures
 - Single and Multi Line comments
 - Jump Statements
-- Variable Declaration
+<!-- - Variable Declaration -->
 
   <!-- - Abstract data Type  -->
   <!-- - Functions??? -->
 
-## Types
+<!-- ## Types
 
 | Pop Culture              | JavaScript                      |
 | ------------------------ | ------------------------------- |
@@ -39,9 +39,9 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | Let me check my calendar | Array/List                      |
 | I'm the map              | Map                             |
 | look it Up               | Dictionary                      |
-| my name is               | Class/Object                   |
+| my name is               | Class/Object                   | -->
 
-## Variable Declration and Assignment
+<!-- ## Variable Declration and Assignment
 
 | Pop Culture                                                             | JavaScript                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------ |
@@ -51,7 +51,7 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | makeUpYourMind d = true                                                 | let d = true                                     |
 | makeUpYourMind e = false                                                | let e = false                                    |
 | Let me check my calendar = girlBoss = ["Monday", "Wednesday", "Friday"] | let girlBoss = ["Monday", "Wednesday", "Friday"] |
-| Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} |
+| Let me check my calendar girlBoss = {"Monday", "Wednesday", "Friday"}   | let girlBoss = {"Monday", "Wednesday", "Friday"} | -->
 
 ## Operators and Comparators
 
@@ -72,31 +72,31 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 | <=          | <=         |
 | >=          | >=         |
 
-## Semantic Errors 
-* Break can only appear in a loop 
-* return can only appear in a function 
-* expect a boolean when necessary 
-* expect an array in a for loop 
-* can have different types
-*  expect a number when necessary 
-*  expect a string when necessary 
-*  number of arguments passed in for number of arguments required 
-*  when a type is expected
+## Semantic Errors
 
+- Break can only appear in a loop
+- return can only appear in a function
+- expect a boolean when necessary
+- expect an array in a for loop
+- can have different types
+- expect a number when necessary
+- expect a string when necessary
+- number of arguments passed in for number of arguments required
+- when a type is expected
 
 ## Comments
 
 **Single-Line Comment**
 
 ```Pop Culture
-shh   this is a single line comment 
+shh   this is a single line comment
 ```
 
 **Multiline Comment**
 
 ```
 ''
-This is a multiline comment 
+This is a multiline comment
 Jenna Rink: I love you, Matt. You're my best friend.
 Matt Flamhaff: I love you too, Jenna... I've always loved you.
 ''
@@ -116,7 +116,7 @@ Matt Flamhaff: I love you too, Jenna... I've always loved you.
   <td>
 
 ```Pop Culture
-  ("Hello world");
+  sayItWithYourChest("Hello world");
 ```
 
   </td>
@@ -143,8 +143,8 @@ console.log("Hello world!");
   <td>
 
 ```Pop Culture
-let time;
-let greeting = '';
+lit time;
+lit greeting = '';
 as if (time < 10) {
   greeting = "Good morning";
 } ugh, as if (time < 20) {
@@ -186,9 +186,9 @@ if (time < 10) {
   <td style="width:100px;"><div style="overflow:scroll; width:100%">
 
 ```Pop Culture
-let group;
-let groupMembers = '';
-say less (group <= 10) {
+lit group;
+lit groupMembers = '';
+sayLess (group <= 10) {
     groupMembers += "The next number of group member is " + group;
     group++;
 }
@@ -223,10 +223,10 @@ while (group <= 5) {
   <td>
 
 ```Pop Culture
-let num = 0;
-say less (num < 5) {
+lit num = 0;
+sayLess (num < 5) {
   as if (num === 3) {
-    give me a break;
+   period;
   }
   num += 1;
 }
@@ -264,10 +264,10 @@ console.log(num)
   <td>
 
 ```Pop Culture
-let str = '';
-for (let i = 0; i < 10; i++) {
+lit str = '';
+keepItUp (let i = 0; i < 10; i++) {
   as if (i === 3)
-    thank u next;
+    thankUNext;
   str += i;
 }
 sayItWithYourChest(str);
