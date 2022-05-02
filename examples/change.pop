@@ -2,7 +2,7 @@ whatsYourFunction change(amount) {
     gimmeDat("Amount cannot be negative");
 }
 lit [result, remaining] = [[], amount];
-for (lit it be denomination of [25, 10, 5]){
+keepItUp (lit it be denomination of [25, 10, 5]){
     result.pushinP(Math.floor(remaining / denomination));
     remaining %= denomination;
 }
