@@ -4,16 +4,23 @@ import analyze from "../src/analyzer.js"
 
 // Programs that are semantically correct
 const semanticChecks = [
-  ["the printing of numbers", "sayItWithYourChest 2;"],
+  ["the printing of numbers", "sayItWithYourChest 2 ;"],
   ["the printing of strings", 'sayItWithYourChest "I’m dead 💀💀";'],
   ["the printing of booleans", "sayItWithYourChest forRealz;"],
   ["the printing of booleans", "sayItWithYourChest urDone;"],
 
+  // [
+  //   "else if",
+  //   "as if 2{sayItWithYourChest 1;} ugh as if forRealz{sayItWithYourChest urDone;} ugh {sayItWithYourChest urDone;}",
+  // ],
   // ["function declaration","whatsYourFunction i (){period;};" ],
-  // ["while lop", "sayLess i < 3 {sayItWithYourChest forRealz;}"],
+  // ["while loop", "sayLess  !i {sayItWithYourChest 2;}"],
   // ["for loop", "keepItUp i innit 1 {sayItWithYourChest 0;}"],
+  // ["break in for loop", "keepItUp i innit  2 {sayLess i {period;}}"],
+
 
   
+  // ["loop through", ""]
   // ["variable declarations", 'lit x = 1; y = "false";'],
   // ["initialize with empty array", "let a = [](of int);"],
   // ["empty list", "list a= []"][("assign arrays", "let b=[1];a=b;b=a;")],
@@ -25,9 +32,10 @@ const semanticChecks = [
   //   " as if true {sayItWithYourChest(1);} ugh {sayItWithYourChest(3);}",
   // ],
   // [
-  //   "else if",
+  //   ["else if",
   //   "as if true {sayItWithYourChest(1);} ugh as if true  {sayItWithYourChest(0);} ugh {sayItWithYourChest(3);}",
   // ],
+
   ["||", "sayItWithYourChest(forRealz||urDone||forRealz);"],
   ["&&", "sayItWithYourChest(forRealz&&urDone&&forRealz);"],
   ["bit ops", "sayItWithYourChest((1&2)|(9^3));"],
