@@ -17,26 +17,21 @@ const semanticChecks = [
   // ["while loop", "sayLess  !i {sayItWithYourChest 2;}"],
   // ["for loop", "keepItUp i innit 1 {sayItWithYourChest 0;}"],
   // ["break in for loop", "keepItUp i innit  2 {sayLess i {period;}}"],
+  // ["short return", "whatsYourFunction f(){gimmeDat;};"],
+[]
 
+    // ["loop through", ""]
+    // ["variable declarations", 'lit x = 1; y = "false";'],
+    // ["initialize with empty array", "let a = [](of int);"],
+    //   "long if",
+    //   " as if true {sayItWithYourChest(1);} ugh {sayItWithYourChest(3);}",
+    // ],
+    // [
+    //   ["else if",
+    //   "as if true {sayItWithYourChest(1);} ugh as if true  {sayItWithYourChest(0);} ugh {sayItWithYourChest(3);}",
+    // ],
 
-  
-  // ["loop through", ""]
-  // ["variable declarations", 'lit x = 1; y = "false";'],
-  // ["initialize with empty array", "let a = [](of int);"],
-  // ["empty list", "list a= []"][("assign arrays", "let b=[1];a=b;b=a;")],
-  // ["short return", "function f() { gimmeDat; }"],
-  // ["long return", "function f(): makeUpYourMind { gimmeDat true; }"],
-  // ["break in nested if", "say less false {if true {give me a break;}}"],
-  // [
-  //   "long if",
-  //   " as if true {sayItWithYourChest(1);} ugh {sayItWithYourChest(3);}",
-  // ],
-  // [
-  //   ["else if",
-  //   "as if true {sayItWithYourChest(1);} ugh as if true  {sayItWithYourChest(0);} ugh {sayItWithYourChest(3);}",
-  // ],
-
-  ["||", "sayItWithYourChest(forRealz||urDone||forRealz);"],
+    [("||", "sayItWithYourChest(forRealz||urDone||forRealz);")],
   ["&&", "sayItWithYourChest(forRealz&&urDone&&forRealz);"],
   ["bit ops", "sayItWithYourChest((1&2)|(9^3));"],
   //["relations", 'sayItWithYourChest(1<=2 && "x">"y" && 3<1);'],
@@ -44,8 +39,7 @@ const semanticChecks = [
   // ["array length", "sayItWithYourChest(#[1,2,3]);"],
   // ["variables", "let x=[[[[1]]]]; sayItWithYourChest(x[0][0][0][0]+2);"],
   // ["recursive structs", "struct S {z: S?} let x = S(no S);"],
-  // ["assigned functions", "whatYourFunction f() {}\nlet g = f;g = f;"],
-  // [
+
   //   "call of assigned functions",
   //   "whatYourFunction f(x: int) {}\nlet g=f;g(1);",
   // ],
@@ -59,14 +53,11 @@ const semanticChecks = [
   // ["voids in fn type", "function f(g: (void)->void) {}"],
   // ["outer variable", "let x=1; while(false) {sayItWithYourChest(x);}"],
   // ["built-in constants", "sayItWithYourChest(25.0 * π);"],
-  // ["built-in sin", "sayItWithYourChest(sin(π));"],
-  // ["built-in cos", "sayItWithYourChest(cos(93.999));"],
-  // ["built-in hypot", "sayItWithYourChest(hypot(-4.0, 3.00001));"],
 ]
 
 // Programs that are syntactically correct but have semantic errors
 const semanticErrors = [
-  // ["undeclared indentifer", "sayItWithYourChest youAreDone;", /./],
+  ["undeclared indentifer", "sayItWithYourChest youAreDone;", /./],
   // ["break outside loop", "break;", /Break can only appear in a loop/],
   // [
   //   "break inside function",
