@@ -94,14 +94,6 @@ function checkBoolean(e) {
   checkType(e, [Type.BOOLEAN], "a boolean")
 }
 
-//  function checkMap(e) {
-//      check(e.type.contructor === MapType, "Map expected", e)
-//  }
-
-//  function checkDictionary(e) {
-//      check(e.type.contructor === DictionaryType, "Dictrionaty expected", e)
-//  }
-
 function checkInteger(e) {
   checkType(e, [Type.INT], "an integer")
 }
@@ -111,8 +103,6 @@ function checkString(e) {
 }
 
 function checkHaveSameType(e1, e2) {
-  console.log("left type", e1.type)
-  console.log("right type", e2.type)
   check(e1.type.isEquivalentTo(e2.type), "Operands do not have the same type")
 }
 
@@ -120,15 +110,8 @@ function checkNumericOrString(e) {
   checkType(e, [Type.INT, Type.STRING], "a number or string")
 }
 
-function checkIsAType(e) {
-  check(e instanceof Type, "Type expected", e)
-}
-
-function checkMemberDeclared(field, { in: struct }) {
-  check(
-    struct.type.fields.map((f) => f.name.lexeme).includes(field),
-    "No such field"
-  )
+function checkCallable(e) {
+  check(e.constructor == Function, "Call of non-function")
 }
 
 function checkInLoop(context) {
@@ -137,14 +120,6 @@ function checkInLoop(context) {
 
 function checkInFunction(context) {
   check(context.function, "Return can only appear in a function")
-}
-
-//   function checkReturnsNothing(f) {
-//     check(f.type.returnType === Type.VOID, "Something should be returned here")
-//   }
-
-function checkReturnsSomething(f) {
-  check(f.type.returnType !== Type.VOID, "Cannot return a value here")
 }
 
 /***************************************
@@ -168,8 +143,19 @@ class Context {
     if (name in this.locals) error(`Identifier ${name} already declared`)
     this.locals.set(name, entity)
   }
+  lookup(name) {
+    const entity = this.locals.get(name)
+    if (entity) {
+      return entity
+    } else if (this.parent) {
+      return this.parent.lookup(name)
+    }
+    error(`Identifier ${name} not declared`)
+  }
+  newChildContext(props) {
+    return new Context({ ...this, ...props, parent: this, locals: new Map() })
+  }
   analyze(node) {
-    //console.log(node.constructor)
     return this[node.constructor.name](node)
   }
   Program(p) {
@@ -184,14 +170,21 @@ class Context {
     d.variable.value.type = d.initializer.type // Type inference
     this.add(d.variable.lexeme, d.variable.value)
   }
+  FunctionDeclaration(d) {
+    d.fun.value = new Function(d.fun.lexeme, d.params.length, true)
+    const childContext = this.newChildContext({
+      inLoop: false,
+      function: d.fun.value,
+    })
+    this.add(d.fun.lexeme, d.fun.value)
+    childContext.analyze(d.body)
+  }
   BreakStatement(s) {
     checkInLoop(this)
   }
   ReturnStatement(s) {
     checkInFunction(this)
-    checkReturnsSomething(this.function)
     this.analyze(s.expression)
-    checkReturnable({ expression: s.expression, from: this.function })
   }
   IfStatement(s) {
     this.analyze(s.test)
@@ -222,33 +215,25 @@ class Context {
     this.analyze(e.left)
     this.analyze(e.right)
     if (["&", "|", "^", "<<", ">>"].includes(e.op)) {
-      checkInteger(e.left)
-      checkInteger(e.right)
       e.type = Type.INT
     } else if (["+"].includes(e.op)) {
-      checkNumericOrString(e.left)
-      checkHaveSameType(e.left, e.right)
       e.type = e.left.type
     } else if (["-", "*", "/", "%", "**"].includes(e.op)) {
-      checkNumeric(e.left)
-      checkHaveSameType(e.left, e.right)
       e.type = e.left.type
     } else if (["<", "<=", ">", ">="].includes(e.op)) {
-      checkNumericOrString(e.left)
-      checkHaveSameType(e.left, e.right)
       e.type = Type.BOOLEAN
     } else if (["==", "!="].includes(e.op)) {
-      checkHaveSameType(e.left, e.right)
       e.type = Type.BOOLEAN
     } else if (["&&", "||"].includes(e.op)) {
-      checkBoolean(e.left)
-      checkBoolean(e.right)
       e.type = Type.BOOLEAN
-    } else if (["??"].includes(e.op)) {
-      checkIsAnOptional(e.left)
-      checkAssignable(e.right, { toType: e.left.type.baseType })
-      e.type = e.left.type
     }
+  }
+  Call(c) {
+    this.analyze(c.id)
+    const callee = c.id?.value
+    checkCallable(callee)
+    this.analyze(c.args)
+    // TODO ---> checkFunctionCallArguments(c.args, callee.type) check same # of args as parms
   }
   Array(a) {
     a.forEach((item) => this.analyze(item))

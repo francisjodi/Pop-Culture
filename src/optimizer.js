@@ -2,6 +2,7 @@ import * as core from "./core.js"
 import * as stdlib from "./stdlib.js"
 
 export default function optimize(node) {
+  // console.log(node)
   return optimizers[node.constructor.name](node)
 }
 
@@ -12,7 +13,7 @@ const optimizers = {
   },
   VariableDeclaration(d) {
     d.variable = optimize(d.variable)
-    d.intializer = optimize(d.intializer)
+    d.initializer = optimize(d.initializer)
     return d
   },
   TypeDeclaration(d) {
@@ -25,11 +26,6 @@ const optimizers = {
     d.parameters = optimize(d.parameters)
     if (d.body) d.body = optimize(d.body)
     return d
-  },
-
-  PrintStatement(p) {
-    p.argument = optimize(p.argument)
-    return p
   },
   IfStatement(s) {
     s.test = optimize(s.test)
@@ -64,6 +60,10 @@ const optimizers = {
     return s
   },
   ReturnStatement(s) {
+    s.expression = optimize(s.expression)
+    return s
+  },
+  PrintStatement(s) {
     s.expression = optimize(s.expression)
     return s
   },
@@ -141,5 +141,15 @@ const optimizers = {
   },
   Number(e) {
     return e
+  },
+  Token(t) {
+    // All tokens get optimized away and basically replace with either their
+    // value (obtained by the analyzer for literals and ids) or simply with
+    // lexeme (if a plain symbol like an operator)
+    return t.value ?? t.lexeme
+  },
+  Array(a) {
+    // Flatmap since each element can be an array
+    return a.flatMap(optimize)
   },
 }

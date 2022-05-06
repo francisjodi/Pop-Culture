@@ -17,21 +17,19 @@ const semanticChecks = [
   // ["while loop", "sayLess  !i {sayItWithYourChest 2;}"],
   // ["for loop", "keepItUp i innit 1 {sayItWithYourChest 0;}"],
   // ["break in for loop", "keepItUp i innit  2 {sayLess i {period;}}"],
-  // ["short return", "whatsYourFunction f(){gimmeDat;};"],
-[]
+  ["short return", "whatsYourFunction f(){gimmeDat;};"],
+  // ["loop through", ""]
+  // ["variable declarations", 'lit x = 1; y = "false";'],
+  // ["initialize with empty array", "let a = [](of int);"],
+  //   "long if",
+  //   " as if true {sayItWithYourChest(1);} ugh {sayItWithYourChest(3);}",
+  // ],
+  // [
+  //   ["else if",
+  //   "as if true {sayItWithYourChest(1);} ugh as if true  {sayItWithYourChest(0);} ugh {sayItWithYourChest(3);}",
+  // ],
 
-    // ["loop through", ""]
-    // ["variable declarations", 'lit x = 1; y = "false";'],
-    // ["initialize with empty array", "let a = [](of int);"],
-    //   "long if",
-    //   " as if true {sayItWithYourChest(1);} ugh {sayItWithYourChest(3);}",
-    // ],
-    // [
-    //   ["else if",
-    //   "as if true {sayItWithYourChest(1);} ugh as if true  {sayItWithYourChest(0);} ugh {sayItWithYourChest(3);}",
-    // ],
-
-    [("||", "sayItWithYourChest(forRealz||urDone||forRealz);")],
+  ["||", "sayItWithYourChest(forRealz||urDone||forRealz);"],
   ["&&", "sayItWithYourChest(forRealz&&urDone&&forRealz);"],
   ["bit ops", "sayItWithYourChest((1&2)|(9^3));"],
   //["relations", 'sayItWithYourChest(1<=2 && "x">"y" && 3<1);'],
@@ -40,15 +38,7 @@ const semanticChecks = [
   // ["variables", "let x=[[[[1]]]]; sayItWithYourChest(x[0][0][0][0]+2);"],
   // ["recursive structs", "struct S {z: S?} let x = S(no S);"],
 
-  //   "call of assigned functions",
-  //   "whatYourFunction f(x: int) {}\nlet g=f;g(1);",
-  // ],
-  // [
-  //   "pass a function to a function",
-  //   `whatYourFunction f(x: int, y: (boolean)->void): int { return 1; }
-  //    whatYourFunction g(z: boolean) {}
-  //    f(2, g);`,
-  // ],
+  ["recursion", "whatsYourFunction f(x) { \n f(1); \n };"],
   // ["types in function type", "function f(g: (int?, float)->string) {}"],
   // ["voids in fn type", "function f(g: (void)->void) {}"],
   // ["outer variable", "let x=1; while(false) {sayItWithYourChest(x);}"],
@@ -57,23 +47,18 @@ const semanticChecks = [
 
 // Programs that are syntactically correct but have semantic errors
 const semanticErrors = [
-  ["undeclared indentifer", "sayItWithYourChest youAreDone;", /./],
+  ["undeclared identifier", "sayItWithYourChest youAreDone;", /./],
   // ["break outside loop", "break;", /Break can only appear in a loop/],
   // [
   //   "break inside function",
   //   "while true {function f() {break;}}",
   //   /Break can only appear in a loop/,
   // ],
-  // [
-  //   "return outside function",
-  //   "return;",
-  //   /Return can only appear in a function/,
-  // ],
-  // ["non-boolean short if test", "as if 1 {}", /Expected a boolean/],
-  // ["non-boolean if test", "if 1 {} ugh {}", /Expected a boolean/],
-  // ["non-boolean while test", "sayLess 1 {}", /Expected a boolean/],
-  // ["non-integer repeat", 'repeat "1" {}', /Expected an integer/],
-  // ["non-integer low range", "keepItUp i in true...2 {}", /Expected an integer/],
+  [
+    "return outside function",
+    "gimmeDat;",
+    /Return can only appear in a function/,
+  ],
   // [
   //   "non-integer high range",
   //   "keepItUp i in 1..<no int {}",

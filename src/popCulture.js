@@ -9,6 +9,9 @@ Syntax: node popCulture.js <filename> <outputType>
 Prints to stdout according to <outputType>, which must be one of:
 
 ast          the abstract syntax tree
+analyzed
+optimized
+js
 `
 
 async function compileFromFile(filename, outputType) {
