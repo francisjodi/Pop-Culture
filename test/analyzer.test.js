@@ -11,12 +11,11 @@ const semanticChecks = [
 
   // [
   //   "else if",
-  //   "as if 2{sayItWithYourChest 1;} ugh as if forRealz{sayItWithYourChest urDone;} ugh {sayItWithYourChest urDone;}",
+  //   "as if 2< 3{gimmeDat forRealz ;} ugh as if 2>3{gimmeDat urDone;} ugh { gimmeDat urDone;}",
   // ],
-  // ["function declaration","whatsYourFunction i (){period;};" ],
   // ["while loop", "sayLess  !i {sayItWithYourChest 2;}"],
   // ["for loop", "keepItUp i innit 1 {sayItWithYourChest 0;}"],
-  // ["break in for loop", "keepItUp i innit  2 {sayLess i {period;}}"],
+  // ["break in while loop", "sayLess i {period;}"],
   ["short return", "whatsYourFunction f(){gimmeDat;};"],
   // ["loop through", ""]
   // ["variable declarations", 'lit x = 1; y = "false";'],
@@ -48,22 +47,13 @@ const semanticChecks = [
 // Programs that are syntactically correct but have semantic errors
 const semanticErrors = [
   ["undeclared identifier", "sayItWithYourChest youAreDone;", /./],
-  // ["break outside loop", "break;", /Break can only appear in a loop/],
-  // [
-  //   "break inside function",
-  //   "while true {function f() {break;}}",
-  //   /Break can only appear in a loop/,
-  // ],
+  ["break outside loop", "period;", /Break can only appear in a loop/],
   [
     "return outside function",
     "gimmeDat;",
     /Return can only appear in a function/,
   ],
-  // [
-  //   "non-integer high range",
-  //   "keepItUp i in 1..<no int {}",
-  //   /Expected an integer/,
-  // ],
+ 
   // ["non-array in for", "keepItUp i in 100 {}", /Array expected/],
   // [
   //   "non-boolean conditional test",
