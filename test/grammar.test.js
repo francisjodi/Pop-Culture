@@ -21,7 +21,7 @@ const syntaxChecks = [
   ["while loop with empty block", "sayLess x==1 {}"],
   ["boolean literals", "lit x = forRealz || urDone;"],
   ["empty string", 'lit x = "";'],
-  // ["for loop", "keepItUp ( lit i = 0; i < 5; i++ ) { i += 1; }"],
+  // ["for loop", "keepItUp { }"],
   // ["", ""],
 ]
 
@@ -38,8 +38,11 @@ const syntaxErrors = [
   ["bad array literal", "lit x = [1,2,];", /Line 1, col 14/],
   ["reserved word as an identifier", "lit stickIt = 1;", /Line 1, col 5/],
   // ["missing identifier between two operators", "lit x = 7 + - 4;", /Line 1, col 12/],
-        //this is currently allowed
+        //this is currently allowed iin grammar
   ["unbalanced brackets", "lit x = [1,2,3;", /Line 1, col 15/],
+  ["variable declaration without keyword", "x + 5;", /Line 1, col 3/],
+  ["decimal number", "lit x = 2.0;", /Line 1, col 10/],
+  ["numbers cannot be called", "sayItWithYourChest(500(x));", /Line 1, col 23/],
 ]
 
 describe("The grammar", () => {
