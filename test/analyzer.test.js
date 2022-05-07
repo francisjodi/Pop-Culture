@@ -53,7 +53,12 @@ const semanticErrors = [
     "gimmeDat;",
     /Return can only appear in a function/,
   ],
- 
+  [
+    ("too few calls",
+    "lit i > 1( makeUpYourMind ); ",
+    /Calls need an arguement/),
+  ],
+
   // ["non-array in for", "keepItUp i in 100 {}", /Array expected/],
   // [
   //   "non-boolean conditional test",
@@ -65,55 +70,8 @@ const semanticErrors = [
   //   "sayItWithYourChest(true?1:true);",
   //   /not have the same type/,
   // ],
-  // ["bad types for ||", "sayItWithYourChest(false||1);", /Expected a boolean/],
-  // ["bad types for &&", "sayItWithYourChest(false&&1);", /Expected a boolean/],
-  // [
-  //   "bad types for +",
-  //   "sayItWithYourChest(false+1);",
-  //   /Expected a number or string/,
-  // ],
-  // ["bad types for -", "sayItWithYourChest(false-1);", /Expected a number/],
-  // ["bad types for *", "sayItWithYourChest(false*1);", /Expected a number/],
-  // ["bad types for /", "sayItWithYourChest(false/1);", /Expected a number/],
-  // ["bad types for **", "sayItWithYourChest(false**1);", /Expected a number/],
-  // [
-  //   "bad types for <",
-  //   "sayItWithYourChest(false<1);",
-  //   /Expected a number or string/,
-  // ],
-  // [
-  //   "bad types for <=",
-  //   "sayItWithYourChest(false<=1);",
-  //   /Expected a number or string/,
-  // ],
-  // [
-  //   "bad types for >",
-  //   "sayItWithYourChest(false>1);",
-  //   /Expected a number or string/,
-  // ],
-  // [
-  //   "bad types for >=",
-  //   "sayItWithYourChest(false>=1);",
-  //   /Expected a number or string/,
-  // ],
-  // ["bad types for negation", "sayItWithYourChest(-true);", /Expected a number/],
-  // ["bad types for length", "sayItWithYourChest(#false);", /Array expected/],
-  // ["bad types for not", 'sayItWithYourChest(!"hello");', /Expected a boolean/],
-  // [
-  //   "non-integer index",
-  //   "let a=[1];sayItWithYourChest(a[false]);",
-  //   /Expected an integer/,
-  // ],
-  // [
-  //   "diff type array elements",
-  //   "sayItWithYourChest([3,3.0]);",
-  //   /Not all elements have the same type/,
-  // ],
-  // [
-  //   "shadowing",
-  //   "let x = 1;\nwhile true {let x = 1;}",
-  //   /Identifier x already declared/,
-  // ],
+  // ["bad types for ||", "sayItWithYourChest(urDone||1);", /Expected a boolean/],
+
   // [
   //   "call of uncallable",
   //   "let x = 1;\nsayItWithYourChest(x());",
@@ -121,19 +79,13 @@ const semanticErrors = [
   // ],
   // [
   //   "Too many args",
-  //   "function f(x: int) {}\nf(1,2);",
+  //   " whatsYourFunction f(x) {;}}\nf(1,2);",
   //   /1 argument\(s\) required but 2 passed/,
   // ],
   // [
   //   "Too few args",
   //   "function f(x: int) {}\nf();",
   //   /1 argument\(s\) required but 0 passed/,
-  // ],
-  // ["Non-type in param", "let x=1;function f(y:x){}", /Type expected/],
-  // [
-  //   "Non-type in return type",
-  //   "let x=1;function f():x{return 1;}",
-  //   /Type expected/,
   // ],
   // ["Non-type in field type", "let x=1;struct S {y:x}", /Type expected/],
 ]
