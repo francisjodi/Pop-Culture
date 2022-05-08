@@ -284,3 +284,18 @@ console.log(str)
   </td>
   </tr>
 </table>
+
+# Presentation
+
+<details>
+  <summary>Language Pop Culture Slides </summary>
+  <img src="docs/Pop%20Culture%20Presentation.png" name="Pop Culture Presentation">
+  <img src="docs/Pop%20Culture%20Presentation%20(7).png" name="image-name">
+  <img src="docs/Pop%20Culture%20Presentation%20(1).png" name="image-name">
+  <img src="docs/Pop%20Culture%20Presentation%20(2).png" name="image-name">
+  <img src="docs/Pop%20Culture%20Presentation%20(3).png" name="image-name">
+  <img src="docs/Pop%20Culture%20Presentation%20(4).png" name="">
+    <img src="docs/Pop%20Culture%20Presentation%20(5).png" name="">
+ <img src="docs/Pop%20Culture%20Presentation%20(5).png" name="">
+  <img src="docs/Pop%20Culture%20Presentation%20(6).png" name="">
+</details>
