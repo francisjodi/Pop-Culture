@@ -8,6 +8,7 @@ const semanticChecks = [
   ["the printing of strings", 'sayItWithYourChest "I’m dead 💀💀";'],
   ["the printing of booleans", "sayItWithYourChest forRealz;"],
   ["the printing of booleans", "sayItWithYourChest urDone;"],
+  ["variable declarations", "lit num = 3;"],
 
   // [
   //   "else if",
@@ -61,13 +62,11 @@ const semanticErrors = [
 
   // ["non-array in for", "keepItUp i in 100 {}", /Array expected/],
 
-
   // [
   //   "call of uncallable",
   //   "lit x = 1;sayItWithYourChest(x);",
   //   /Call of non-function/,
   // ],
-
 ]
 
 describe("The analyzer", () => {
