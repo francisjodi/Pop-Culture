@@ -24,22 +24,6 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 - Jump Statements
 - Variable Declaration
 
-  <!-- - Abstract data Type  -->
-  <!-- - Functions??? -->
-
-<!-- ## Types
-
-| Pop Culture              | JavaScript                      |
-| ------------------------ | ------------------------------- |
-| makeUpYourMind           | Boolean                         |
-| sayIt                    | String                          |
-| whatsYourNumber          | Numbers (ints parmaterzied)     |
-| didYouGetTheDigits       | Numbers (ints unlimited length) |
-| whatYourFunction         | Function                        |
-| Let me check my calendar | Array/List                      |
-| I'm the map              | Map                             |
-| look it Up               | Dictionary                      |
-| my name is               | Class/Object                   | -->
 
 ## Variable Declration and Assignment
 
@@ -71,13 +55,10 @@ Authors: [Izabela Aranda - Dooley](https://github.com/izabela-ad), [Nelson Davis
 
 - Break can only appear in a loop
 - return can only appear in a function
-- expect a boolean when necessary
-- expect an array in a for loop
-- can have different types
-- expect a number when necessary
-- expect a string when necessary
-- number of arguments passed in for number of arguments required
-- when a type is expected
+- Calls need an argument
+<!-- - expect a string when necessary -->
+<!-- - number of arguments passed in for loop  -->
+- Calls need an argument
 
 ## Comments
 

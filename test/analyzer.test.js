@@ -9,15 +9,19 @@ const semanticChecks = [
   ["the printing of booleans", "sayItWithYourChest forRealz;"],
   ["the printing of booleans", "sayItWithYourChest urDone;"],
   ["variable declarations", "lit num = 3;"],
+  ["short return", "whatsYourFunction f(){gimmeDat;};"],
+  ["||", "sayItWithYourChest(forRealz||urDone||forRealz);"],
+  ["&&", "sayItWithYourChest(forRealz&&urDone&&forRealz);"],
+  ["bit ops", "sayItWithYourChest((1&2)|(9^3));"],
+  ["recursion", "whatsYourFunction f(x) { \n f(1); \n };"],
 
   // [
   //   "else if",
   //   "as if 2< 3{gimmeDat forRealz ;} ugh as if 2>3{gimmeDat urDone;} ugh { gimmeDat urDone;}",
   // ],
-  ["while loop", "sayLess i != 2 {period;}"],
+  // ["while loop", "sayLess i != 2 {period;}"],
   // ["for loop", "keepItUp i innit 1 {sayItWithYourChest 0;}"],
   // ["break in while loop", "sayLess i {period;}"],
-  ["short return", "whatsYourFunction f(){gimmeDat;};"],
   // ["loop through", ""]
   // ["variable declarations", 'lit x = 1; y = "false";'],
   // ["initialize with empty array", "let a = [](of int);"],
@@ -29,16 +33,12 @@ const semanticChecks = [
   //   "as if true {sayItWithYourChest(1);} ugh as if true  {sayItWithYourChest(0);} ugh {sayItWithYourChest(3);}",
   // ],
 
-  ["||", "sayItWithYourChest(forRealz||urDone||forRealz);"],
-  ["&&", "sayItWithYourChest(forRealz&&urDone&&forRealz);"],
-  ["bit ops", "sayItWithYourChest((1&2)|(9^3));"],
   //["relations", 'sayItWithYourChest(1<=2 && "x">"y" && 3<1);'],
   // ["arithmetic", "let x=1;sayItWithYourChest(2*3+5**-3/2-5%8);"],
   // ["array length", "sayItWithYourChest(#[1,2,3]);"],
   // ["variables", "let x=[[[[1]]]]; sayItWithYourChest(x[0][0][0][0]+2);"],
   // ["recursive structs", "struct S {z: S?} let x = S(no S);"],
 
-  ["recursion", "whatsYourFunction f(x) { \n f(1); \n };"],
   // ["types in function type", "function f(g: (int?, float)->string) {}"],
   // ["voids in fn type", "function f(g: (void)->void) {}"],
   // ["outer variable", "let x=1; while(false) {sayItWithYourChest(x);}"],
