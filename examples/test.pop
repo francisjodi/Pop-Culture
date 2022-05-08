@@ -1,4 +1,1 @@
-lit decision = urDone;
-sayLess (!decision) {
-    sayItWithYourChest 0;
-}
+stickIt x1 = 20;

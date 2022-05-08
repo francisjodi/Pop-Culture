@@ -133,6 +133,17 @@ const expected12 = `   1 | Program statements=[#2,#3]
    3 | WhileStatement expression=#4 body=[#5]
    4 | UnaryExpression op='!' operand=(Id, "decision")
    5 | PrintStatement expression=(Int, "0")`
+
+// const source13 = `sayItWithYourChest(6)`
+// const expected13 = `   
+// Error: Line 1, col 22:
+// > 1 | sayItWithYourChest(6)
+//                            ^
+// Expected ";"`
+
+const source14 = `stickIt x1 = 20;`
+const expected14 = `   1 | Program statements=[#2]
+   2 | VariableDeclaration modifier='stickIt' variable=(Id, "x1") initializer=(Int, "20")`
 describe("The AST generator", () => {
   it("Test 1: ", () => {
     assert.deepEqual(util.format(ast(source1)), expected1)
@@ -169,5 +180,11 @@ describe("The AST generator", () => {
   })
   it("Test 12: ", () => {
     assert.deepEqual(util.format(ast(source12)), expected12)
+  })
+  // it("Test 13: ", () => {
+  //   assert.deepEqual(util.format(ast(source13)), expected13)
+  // })
+  it("Test 14: ", () => {
+    assert.deepEqual(util.format(ast(source14)), expected14)
   })
 })
