@@ -13,7 +13,7 @@ const semanticChecks = [
   //   "else if",
   //   "as if 2< 3{gimmeDat forRealz ;} ugh as if 2>3{gimmeDat urDone;} ugh { gimmeDat urDone;}",
   // ],
-  // ["while loop", "sayLess  !i {sayItWithYourChest 2;}"],
+  ["while loop", "sayLess i != 2 {period;}"],
   // ["for loop", "keepItUp i innit 1 {sayItWithYourChest 0;}"],
   // ["break in while loop", "sayLess i {period;}"],
   ["short return", "whatsYourFunction f(){gimmeDat;};"],
@@ -60,34 +60,14 @@ const semanticErrors = [
   ],
 
   // ["non-array in for", "keepItUp i in 100 {}", /Array expected/],
-  // [
-  //   "non-boolean conditional test",
-  //   "sayItWithYourChest(1?2:3);",
-  //   /Expected a boolean/,
-  // ],
-  // [
-  //   "diff types in conditional arms",
-  //   "sayItWithYourChest(true?1:true);",
-  //   /not have the same type/,
-  // ],
-  // ["bad types for ||", "sayItWithYourChest(urDone||1);", /Expected a boolean/],
+
 
   // [
   //   "call of uncallable",
-  //   "let x = 1;\nsayItWithYourChest(x());",
+  //   "lit x = 1;sayItWithYourChest(x);",
   //   /Call of non-function/,
   // ],
-  // [
-  //   "Too many args",
-  //   " whatsYourFunction f(x) {;}}\nf(1,2);",
-  //   /1 argument\(s\) required but 2 passed/,
-  // ],
-  // [
-  //   "Too few args",
-  //   "function f(x: int) {}\nf();",
-  //   /1 argument\(s\) required but 0 passed/,
-  // ],
-  // ["Non-type in field type", "let x=1;struct S {y:x}", /Type expected/],
+
 ]
 
 describe("The analyzer", () => {

@@ -38,9 +38,6 @@ const optimizers = {
   },
   WhileLoop(s) {
     s.test = optimize(s.test)
-    // if (s.test === false) {
-    //   return []
-    // }
     s.body = optimize(s.body)
     return s
   },

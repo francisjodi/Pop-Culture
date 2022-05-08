@@ -21,8 +21,6 @@ const syntaxChecks = [
   ["while loop with empty block", "sayLess x==1 {}"],
   ["boolean literals", "lit x = forRealz || urDone;"],
   ["empty string", 'lit x = "";'],
-  // ["for loop", "keepItUp { }"],
-  // ["", ""],
 ]
 
 const syntaxErrors = [

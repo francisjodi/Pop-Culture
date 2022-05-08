@@ -91,12 +91,6 @@ export class IfStatement {
   }
 }
 
-// export class ShortIfStatement {
-//   constructor(test, consequent) {
-//     Object.assign(this, { test, consequent })
-//   }
-// }
-
 export class ForStatement {
   constructor(iterator, collection, body) {
     Object.assign(this, { iterator, collection, body })

@@ -9,17 +9,6 @@ import * as stdlib from "./stdlib.js"
 export default function generate(program) {
   const output = []
 
-  // const standardFunctions = new Map([
-  //   [stdlib.contents.print, (x) => `console.log(${x})`],
-  //   [stdlib.contents.sin, (x) => `Math.sin(${x})`],
-  //   [stdlib.contents.cos, (x) => `Math.cos(${x})`],
-  //   [stdlib.contents.exp, (x) => `Math.exp(${x})`],
-  //   [stdlib.contents.ln, (x) => `Math.log(${x})`],
-  //   [stdlib.contents.hypot, ([x, y]) => `Math.hypot(${x},${y})`],
-  //   [stdlib.contents.bytes, (s) => `[...Buffer.from(${s}, "utf8")]`],
-  //   [stdlib.contents.codepoints, (s) => `[...(${s})].map(s=>s.codePointAt(0))`],
-  // ])
-
   // Variable and function names in JS will be suffixed with _1, _2, _3,
   // etc. This is because "switch", for example, is a legal name in Carlos,
   // but not in JS. So, the Carlos variable "switch" must become something
@@ -97,20 +86,8 @@ export default function generate(program) {
         output.push("}")
       }
     },
-    ShortIfStatement(s) {
-      output.push(`if (${gen(s.test)}) {`)
-      gen(s.consequent)
-      output.push("}")
-    },
     WhileStatement(s) {
       output.push(`while (${gen(s.test)}) {`)
-      gen(s.body)
-      output.push("}")
-    },
-    RepeatStatement(s) {
-      // JS can only repeat n times if you give it a counter variable!
-      const i = targetName({ name: "i" })
-      output.push(`for (let ${i} = 0; ${i} < ${gen(s.count)}; ${i}++) {`)
       gen(s.body)
       output.push("}")
     },
@@ -143,14 +120,8 @@ export default function generate(program) {
       }
       return `${e.op}(${gen(e.operand)})`
     },
-    EmptyOptional(e) {
-      return "undefined"
-    },
     SubscriptExpression(e) {
       return `${gen(e.array)}[${gen(e.index)}]`
-    },
-    ArrayExpression(e) {
-      return `[${gen(e.elements).join(",")}]`
     },
     EmptyArray(e) {
       return "[]"
@@ -166,9 +137,6 @@ export default function generate(program) {
       output.push(`${targetCode};`)
     },
     Number(e) {
-      return e
-    },
-    BigInt(e) {
       return e
     },
     Boolean(e) {
