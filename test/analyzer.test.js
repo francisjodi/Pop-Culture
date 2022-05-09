@@ -14,7 +14,9 @@ const semanticChecks = [
   ["&&", "sayItWithYourChest(forRealz&&urDone&&forRealz);"],
   ["bit ops", "sayItWithYourChest((1&2)|(9^3));"],
   ["recursion", "whatsYourFunction f(x) { \n f(1); \n };"],
+  ["if statements", "whatsYourFunction f(){as if (urDone){}};"],
 
+  //["for statement", "keepItUp (lit it be i = 1; i <= 20; i++) { \n sayItWithYourChest(12); \n }"]
   // [
   //   "else if",
   //   "as if 2< 3{gimmeDat forRealz ;} ugh as if 2>3{gimmeDat urDone;} ugh { gimmeDat urDone;}",
