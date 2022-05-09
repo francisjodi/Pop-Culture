@@ -11,18 +11,18 @@ const returnX = new core.ReturnStatement(x)
 const onePlusTwo = new core.BinaryExpression("+", 1, 2)
 const identity = Object.assign(new core.Function("id"), { body: returnX })
 const intFun = (body) => new core.FunctionDeclaration("f", [], "int", body)
-// const callIdentity = (args) => new core.Call(identity, args)
+const callIdentity = (args) => new core.Call(identity, args)
 const or = (...d) => d.reduce((x, y) => new core.BinaryExpression("||", x, y))
 const and = (...c) => c.reduce((x, y) => new core.BinaryExpression("&&", x, y))
 const less = (x, y) => new core.BinaryExpression("<", x, y)
 const eq = (x, y) => new core.BinaryExpression("==", x, y)
 const times = (x, y) => new core.BinaryExpression("*", x, y)
 const neg = (x) => new core.UnaryExpression("-", x)
-// const array = (...elements) => new core.ArrayExpression(elements)
-// const emptyArray = new core.EmptyArray(core.Type.INT)
+const array = (...elements) => new core.ArrayExpression(elements)
+const emptyArray = new core.EmptyArray(core.Type.INT)
 const sub = (a, e) => new core.SubscriptExpression(a, e)
 const unwrapElse = (o, e) => new core.BinaryExpression("??", o, e)
-// const conditional = (x, y, z) => new core.Conditional(x, y, z)
+const conditional = (x, y, z) => new core.Conditional(x, y, z)
 // const emptyOptional = new core.EmptyOptional(core.Type.INT)
 const some = (x) => new core.UnaryExpression("some", x)
 
@@ -75,7 +75,7 @@ const tests = [
       //   new core.VariableDeclaration(
       //     "q",
       //     false,
-      //     new core.EmptyArray(core.Type.FLOAT)
+      //     //new core.EmptyArray(core.Type.FLOAT)
       //   ),
       //   new core.VariableDeclaration(
       //     "r",
@@ -85,8 +85,8 @@ const tests = [
       //   new core.WhileStatement(true, [new core.BreakStatement()]),
       //   new core.RepeatStatement(5, [new core.ReturnStatement(1)]),
       //   conditional(x, 1, 2),
-      //   unwrapElse(some(x), 7),
-      //   new core.IfStatement(x, [], []),
+      unwrapElse(some(x), 7),
+      //new core.IfStatement(x, [], []),
       //   new core.ShortIfStatement(x, []),
       //   new core.ForRangeStatement(x, 2, "..<", 5, []),
       //   new core.ForStatement(x, array(1, 2, 3), []),
