@@ -22,9 +22,11 @@ export default function generate(program) {
     }
   })(new Map())
 
-  function gen(node) {
-    return generators[node.constructor.name](node)
-  }
+  // function gen(node) {
+  //   return generators[node.constructor.name](node)
+  // }
+  const gen = (node) => generators[node.constructor.name](node)
+  console.log
 
   const generators = {
     // Key idea: when generating an expression, just return the JS string; when
