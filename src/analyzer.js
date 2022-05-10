@@ -139,13 +139,16 @@ class Context {
   BreakStatement(s) {
     checkInLoop(this)
   }
+  Assignment(s) {
+    this.analyze(s.source)
+    this.analyze(s.target)
+  }
   ReturnStatement(s) {
     checkInFunction(this)
     this.analyze(s.expression)
   }
   IfStatement(s) {
     this.analyze(s.test)
-    checkBoolean(s.test)
     this.newChildContext().analyze(s.consequent)
     if (s.alternate.constructor === Array) {
       // It's a block of statements, make a new context
@@ -157,12 +160,10 @@ class Context {
   }
   ShortIfStatement(s) {
     this.analyze(s.test)
-    checkBoolean(s.test)
     this.newChildContext().analyze(s.consequent)
   }
   WhileStatement(s) {
     this.analyze(s.test)
-    checkBoolean(s.test)
     this.newChildContext({ inLoop: true }).analyze(s.body)
   }
   PrintStatement(s) {
@@ -185,6 +186,17 @@ class Context {
       e.type = Type.BOOLEAN
     }
   }
+  UnaryExpression(e) {
+    this.analyze(e.operand)
+    if (e.op === "#") {
+      e.type = Type.INT
+    } else if (e.op === "-") {
+      e.type = e.operand.type
+    } else if (e.op === "!") {
+      e.type = Type.BOOLEAN
+    }
+  }
+
   Call(c) {
     this.analyze(c.id)
     const callee = c.id?.value

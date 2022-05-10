@@ -66,12 +66,14 @@ const tests = [
   [
     "passes through nonoptimizable constructs",
     ...Array(2).fill([
-      //   new core.Program([new core.ShortReturnStatement()]),
-      new core.VariableDeclaration("x", true, "z"),
+        // new core.Program([new core.ReturnStatement()]),
+        new core.VariableDeclaration("x", true, "z"),
+        new core.IfStatement(x, [], []),
+
       //   new core.TypeDeclaration([new core.Field("x", core.Type.INT)]),
-      //   new core.Assignment(x, new core.BinaryExpression("*", x, "z")),
-      //   new core.Assignment(x, new core.UnaryExpression("not", x)),
-      //   new core.Call(identity, new core.MemberExpression(x, "f")),
+        new core.Assignment(x, new core.BinaryExpression("*", x, "z")),
+        new core.Assignment(x, new core.UnaryExpression("not", x)),
+        // new core.Call(identity, new core.MemberExpression(x, "f")),
       //   new core.VariableDeclaration(
       //     "q",
       //     false,
@@ -82,14 +84,14 @@ const tests = [
       //     false,
       //     new core.EmptyOptional(core.Type.INT)
       //   ),
-      //   new core.WhileStatement(true, [new core.BreakStatement()]),
+        new core.WhileStatement(true, [new core.BreakStatement()]),
       //   new core.RepeatStatement(5, [new core.ReturnStatement(1)]),
       //   conditional(x, 1, 2),
       unwrapElse(some(x), 7),
-      //new core.IfStatement(x, [], []),
+      //   new core.IfStatement(x, [], []),
       //   new core.ShortIfStatement(x, []),
       //   new core.ForRangeStatement(x, 2, "..<", 5, []),
-      //   new core.ForStatement(x, array(1, 2, 3), []),
+        new core.ForStatement(x, array(1, 2, 3), []),
     ]),
   ],
 ]

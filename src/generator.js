@@ -25,8 +25,11 @@ export default function generate(program) {
   // function gen(node) {
   //   return generators[node.constructor.name](node)
   // }
-  const gen = (node) => generators[node.constructor.name](node)
-  console.log
+  const gen = (node) => {
+    console.log(node.constructor.name)
+    generators[node.constructor.name](node)
+  }
+  
 
   const generators = {
     // Key idea: when generating an expression, just return the JS string; when

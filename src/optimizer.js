@@ -2,7 +2,7 @@ import * as core from "./core.js"
 import * as stdlib from "./stdlib.js"
 
 export default function optimize(node) {
-  // console.log(node)
+  console.log(node.constructor.name)
   return optimizers[node.constructor.name](node)
 }
 
@@ -27,32 +27,40 @@ const optimizers = {
     if (d.body) d.body = optimize(d.body)
     return d
   },
+  Assignment(s) {
+    s.source = optimize(s.source)
+    s.target = optimize(s.target)
+    if (s.source === s.target) {
+      return []
+    }
+    return s
+  },
+  BreakStatement(s) {
+    return s
+  },
   IfStatement(s) {
     s.test = optimize(s.test)
-    s.consequent = optimize(s.consequent)
+    s.consequents = optimize(s.consequents)
     s.alternate = optimize(s.alternate)
     // if (s.test.constructor === Boolean) {
     //   return s.test ? s.consequent : s.alternate
     // }
     return s
   },
-  WhileLoop(s) {
-    s.test = optimize(s.test)
+  WhileStatement(s) {
+    s.expression = optimize(s.expression)
+    if (s.expression === false) {
+      // while false is a no-op
+      return []
+    }
     s.body = optimize(s.body)
     return s
   },
-  ForLoop(s) {
-    s.variable = optimize(s.variable)
-    s.start = optimize(s.start)
-    s.end = optimize(s.end)
+  ForStatement(s) {
+    s.collection = optimize(s.collection)
     s.body = optimize(s.body)
-
-    if (s.start.constructor === Number) {
-      if (s.end.constructor === Number) {
-        if (s.start > s.end) {
-          return []
-        }
-      }
+    if (s.collection.constructor === core.EmptyArray) {
+      return []
     }
     return s
   },
@@ -122,6 +130,10 @@ const optimizers = {
         return -e.operand
       }
     }
+    return e
+  },
+  ArrayExpression(e) {
+    e.elements = optimize(e.elements)
     return e
   },
   Variable(v) {
