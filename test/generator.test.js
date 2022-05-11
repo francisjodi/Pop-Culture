@@ -20,9 +20,9 @@ const fixtures = [
       sayItWithYourChest (y && y) || urDone || (x*2) != 5;
     `,
     expected: dedent`
-       let x_1 = 21;
-      x_1 = (x_1 + 1);
-      x_1 = (x_1 - 1);
+      let x_1 = 21;
+      x_1 = x_1 + 1;
+      x_1 = x_1 - 1;
       let y_2 = true;
       y_2 = (((5 ** -(x_1)) / -(100)) > -(x_1));
       console.log(((y_2 && y_2) || ((x_1 * 2) !== 5)));

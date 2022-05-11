@@ -25,11 +25,8 @@ export default function generate(program) {
   // function gen(node) {
   //   return generators[node.constructor.name](node)
   // }
-  const gen = (node) => {
-    console.log(node.constructor.name)
-    generators[node.constructor.name](node)
-  }
-  
+  const gen = (node) => generators[node.constructor.name](node)
+  console.log
 
   const generators = {
     // Key idea: when generating an expression, just return the JS string; when
@@ -81,7 +78,7 @@ export default function generate(program) {
     },
     IfStatement(s) {
       output.push(`if (${gen(s.test)}) {`)
-      gen(s.consequent)
+      gen(s.consequents)
       if (s.alternate.constructor === IfStatement) {
         output.push("} else")
         gen(s.alternate)
@@ -111,13 +108,13 @@ export default function generate(program) {
       output.push("}")
     },
     Conditional(e) {
-      return `((${gen(e.test)}) ? (${gen(e.consequent)}) : (${gen(
+      return `((${gen(e.test)}) ? (${gen(e.consequents)}) : (${gen(
         e.alternate
       )}))`
     },
     BinaryExpression(e) {
       const op = { "==": "===", "!=": "!==" }[e.op] ?? e.op
-      return `(${gen(e.left)} ${op} ${gen(e.right)})`
+      return `(${op} ${gen(e.left)} ${gen(e.right)})`
     },
     UnaryExpression(e) {
       if (e.op === "some") {
