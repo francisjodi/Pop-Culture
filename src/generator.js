@@ -37,16 +37,14 @@ export default function generate(program) {
     VariableDeclaration(d) {
       // We don't care about const vs. let in the generated code! The analyzer has
       // already checked that we never updated a const, so let is always fine.
-      output.push(`let ${gen(d.variable)} = ${gen(d.initializer)};`)
+      output.push(`let ${gen(d.name)} = ${gen(d.initializer)};`)
     },
     Field(f) {
       return targetName(f)
     },
     FunctionDeclaration(d) {
-      output.push(
-        `function ${gen(d.fun)}(${gen(d.fun.parameters).join(", ")}) {`
-      )
-      gen(d.body)
+      output.push(`function ${gen(d.funcName)}() {`)
+      gen(d.suite)
       output.push("}")
     },
     Parameter(p) {
@@ -78,15 +76,10 @@ export default function generate(program) {
     },
     IfStatement(s) {
       output.push(`if (${gen(s.test)}) {`)
-      gen(s.consequents)
-      if (s.alternate.constructor === IfStatement) {
-        output.push("} else")
-        gen(s.alternate)
-      } else {
-        output.push("} else {")
-        gen(s.alternate)
-        output.push("}")
-      }
+      gen(s.consequent)
+      output.push("} else {")
+      gen(s.alternate)
+      output.push("}")
     },
     WhileStatement(s) {
       output.push(`while (${gen(s.test)}) {`)
@@ -113,21 +106,21 @@ export default function generate(program) {
       )}))`
     },
     BinaryExpression(e) {
-      const op = { "==": "===", "!=": "!==" }[e.op] ?? e.op
-      return `(${op} ${gen(e.left)} ${gen(e.right)})`
+      const op = { "==": "===", "!=": "!==", "^": "**" }[e.op] ?? e.op
+      return `(${gen(e.left)} ${op} ${gen(e.right)})`
     },
     UnaryExpression(e) {
-      if (e.op === "some") {
-        e.op = ""
-      }
+      //  if (e.op === "some") {
+      //    e.op = ""
+      //  }
       return `${e.op}(${gen(e.operand)})`
     },
     SubscriptExpression(e) {
       return `${gen(e.array)}[${gen(e.index)}]`
     },
-    EmptyArray(e) {
-      return "[]"
-    },
+    // EmptyArray(e) {
+    //   return "[]"
+    // },
     MemberExpression(e) {
       const object = gen(e.object)
       const field = JSON.stringify(gen(e.field))
@@ -151,7 +144,6 @@ export default function generate(program) {
       return a.map(gen)
     },
   }
-
   gen(program)
   return output.join("\n")
 }
